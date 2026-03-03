@@ -1,0 +1,21 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+Website/admin/admin-error.log
+
+# Runtime/auth data
+Website/data/*.sqlite
+Website/data/password_resets.json
+Website/data/event-anmeldungen.csv
+Website/data/event-warteliste.csv
+
+# Local sensitive config (do not publish credentials)
+Website/config.mail.php
+Website/config.admin.php
+
+# Deployment secrets/scripts
+.deploy.env
+deploy.sh
