@@ -9,49 +9,55 @@ $projects = [
   [
     'emoji'   => '🌿',
     'bg'      => 'linear-gradient(135deg,rgba(16,185,129,0.3),rgba(78,205,196,0.3))',
-    'tags'    => ['PHP', 'CSS', 'JavaScript'],
-    'title'   => 'Florist-Website',
-    'desc'    => 'Elegante Webseite für ein lokales Florist-Studio mit Liquid-Glass-Design, Online-Buchung und Galerie.',
+    'tags'    => ['PHP', 'CMS', 'Business-Website'],
+    'title'   => 'Garten2000 Handewitt',
+    'desc'    => 'Webseite für ein Gartencenter mit modernem Auftritt und klarer Struktur für Leistungen, Angebote und Kontakt.',
+    'url'     => 'https://www.garten2000-handewitt.de',
     'color'   => 'var(--c5)',
   ],
   [
-    'emoji'   => '🍕',
+    'emoji'   => '📍',
     'bg'      => 'linear-gradient(135deg,rgba(251,191,36,0.3),rgba(249,115,22,0.3))',
-    'tags'    => ['PHP', 'MySQL', 'CSS'],
-    'title'   => 'Restaurant-Auftritt',
-    'desc'    => 'Modernes Online-Menü und Reservierungssystem für ein Stadtrestaurant – mit mehrsprachiger Unterstützung.',
+    'tags'    => ['360°', 'Webplattform', 'Partnerprojekt'],
+    'title'   => 'Visitfy',
+    'desc'    => 'Webseite für 360-Grad-Rundgänge – umgesetzt als Partnerprojekt mit Fokus auf Präsentation und Nutzerführung.',
+    'url'     => 'https://visitfy.de/',
     'color'   => 'var(--c4)',
   ],
   [
-    'emoji'   => '💼',
+    'emoji'   => '🍨',
     'bg'      => 'linear-gradient(135deg,rgba(59,130,246,0.3),rgba(14,165,233,0.3))',
-    'tags'    => ['JavaScript', 'CSS', 'Responsive'],
-    'title'   => 'Business-Portfolio',
-    'desc'    => 'Professionelles Portfolio für einen Unternehmensberater – minimalistisch, wirkungsvoll und mobiloptimiert.',
+    'tags'    => ['Admin-Panel', 'Event-Anmeldung', 'Konfigurator'],
+    'title'   => 'Flora Kaffee & Eisbar',
+    'desc'    => 'Webseite für meine Eiscafés mit Veranstaltungen inkl. Anmeldung, Eistorten-Konfigurator und Speisekarte mit Highlights – komplett im Admin-Panel bearbeitbar.',
+    'url'     => 'https://flora-fl.de/index.php',
     'color'   => 'var(--c6)',
   ],
   [
-    'emoji'   => '🛍️',
+    'emoji'   => '👨‍💻',
     'bg'      => 'linear-gradient(135deg,rgba(244,114,182,0.3),rgba(168,85,247,0.3))',
-    'tags'    => ['E-Commerce', 'PHP', 'CSS'],
-    'title'   => 'Fashion-Shop',
-    'desc'    => 'Online-Shop für ein Boutique-Label mit individuellem Produktkonfigurator und klarem Checkout-Prozess.',
+    'tags'    => ['Portfolio', 'UI/UX', 'Performance'],
+    'title'   => 'JasonHolweg.de',
+    'desc'    => 'Meine eigene Portfolio-Webseite mit Fokus auf modernes Design, klare Inhalte und schnelle Ladezeiten.',
+    'url'     => 'https://jasonholweg.de',
     'color'   => 'var(--c7)',
   ],
   [
-    'emoji'   => '🏋️',
+    'emoji'   => '✂️',
     'bg'      => 'linear-gradient(135deg,rgba(255,107,107,0.3),rgba(255,0,128,0.3))',
-    'tags'    => ['PHP', 'JavaScript', 'Animation'],
-    'title'   => 'Fitness-Studio-Website',
-    'desc'    => 'Dynamische Webseite mit Kursplan, Online-Anmeldung und motivierenden Micro-Animationen.',
+    'tags'    => ['CMS', 'Preisliste', 'Service-Website'],
+    'title'   => 'Lyvs Haarstudio',
+    'desc'    => 'Schöne Friseur-Webseite mit Preisliste und vollständig bearbeitbaren Inhalten über ein Admin-Panel.',
+    'url'     => 'https://lyvs-haarstudio.de',
     'color'   => 'var(--c1)',
   ],
   [
-    'emoji'   => '📸',
+    'emoji'   => '🇫🇷',
     'bg'      => 'linear-gradient(135deg,rgba(168,85,247,0.3),rgba(59,130,246,0.3))',
-    'tags'    => ['Galerie', 'CSS', 'Lightbox'],
-    'title'   => 'Fotografen-Portfolio',
-    'desc'    => 'Bildgewaltiges Portfolio mit Fullscreen-Galerie, flüssigen Übergängen und elegantem Glassmorphism-Design.',
+    'tags'    => ['Branding', 'Gastro', 'Webdesign'],
+    'title'   => 'Glacelia',
+    'desc'    => 'Webseite für eine Eisdiele mit französischem Eis – "Eis wie aus Paris" als zentraler Markenbotschaft.',
+    'url'     => 'https://glacelia.de',
     'color'   => 'var(--c3)',
   ],
 ];
@@ -88,8 +94,8 @@ $projects = [
             </div>
             <h3><?= htmlspecialchars($p['title']) ?></h3>
             <p><?= htmlspecialchars($p['desc']) ?></p>
-            <a href="Kontakt.php" class="project-link" style="color:<?= htmlspecialchars($p['color']) ?>">
-              Ähnliches Projekt anfragen <span aria-hidden="true">→</span>
+            <a href="<?= htmlspecialchars($p['url']) ?>" class="project-link" style="color:<?= htmlspecialchars($p['color']) ?>" target="_blank" rel="noopener noreferrer">
+              Projekt ansehen <span aria-hidden="true">↗</span>
             </a>
           </div>
         </article>

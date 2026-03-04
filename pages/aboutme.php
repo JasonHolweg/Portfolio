@@ -38,7 +38,10 @@ include '../includes/header.php';
             Ich bin ein leidenschaftlicher Webentwickler und Designer aus Deutschland. Meine Arbeit verbindet technische Präzision mit einem starken Sinn für Ästhetik – das Ergebnis sind Webseiten, die nicht nur funktionieren, sondern auch begeistern.
           </p>
           <p class="fade-up fade-up-d2" style="color:var(--text-muted);line-height:1.8;margin-bottom:32px">
-            Mein Design-Stil wird stark von modernen Glassmorphism- und Liquid-Glass-Elementen geprägt. Ich glaube, dass gutes Design unsichtbar sein sollte – es führt den Benutzer, ohne sich aufzudrängen.
+            Neben der Webentwicklung bin ich auch Unternehmer: mit Flora Kaffee &amp; Eisbar (2 Standorte in Flensburg) und dem Gartencafé Magnolia GbR im Gartencenter (aktuell im Bau, Eröffnung voraussichtlich Ende 2026 / Anfang 2027).
+          </p>
+          <p class="fade-up fade-up-d2" style="color:var(--text-muted);line-height:1.8;margin-bottom:32px">
+            Deshalb weiß ich aus der Praxis, was Firmen für gute Kunden- und Gästebindung brauchen – und genau das bringe ich in meine Webseiten mit ein.
           </p>
 
           <div class="skills-list fade-up fade-up-d3">

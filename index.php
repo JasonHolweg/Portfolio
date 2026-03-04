@@ -118,7 +118,7 @@ include 'includes/header.php';
     <div class="container">
       <div class="stats-row">
         <div class="stat-item glass fade-up">
-          <div class="stat-number">20+</div>
+          <div class="stat-number">8</div>
           <div class="stat-label">Projekte umgesetzt</div>
         </div>
         <div class="stat-item glass fade-up fade-up-d1">
@@ -164,7 +164,7 @@ include 'includes/header.php';
         <div class="step-card glass fade-up fade-up-d4">
           <div class="step-num">04</div>
           <h3>Launch &amp; Übergabe</h3>
-          <p>Test, Optimierung und Go-Live – du erhältst alle Zugänge und eine persönliche Einweisung.</p>
+          <p>Test, Optimierung und Go-Live – du erhältst alle Zugänge und eine persönliche Einweisung. Nach der Übergabe lassen sich Webseiten per CMS super einfach und schnell im Admin-Bereich anpassen, z. B. bei veralteten Texten oder geänderten Öffnungszeiten.</p>
         </div>
       </div>
     </div>

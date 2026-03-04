@@ -41,6 +41,9 @@
       initFadeUps();
     }
 
+    /* ── Stats counter animation ─────────────────────────── */
+    initStatCounters();
+
     /* ── Contact form ────────────────────────────────────── */
     var form = document.getElementById('contact-form');
     if (form) {
@@ -64,6 +67,56 @@
       });
     }, { threshold: 0.12 });
     items.forEach(function (el) { io.observe(el); });
+  }
+
+  function initStatCounters() {
+    var stats = document.querySelectorAll('.stat-number');
+    if (!stats.length) return;
+
+    function runCounter(el) {
+      if (el.dataset.animated === 'true') return;
+
+      var raw = (el.textContent || '').trim();
+      var match = raw.match(/^(\d+)(.*)$/);
+      if (!match) return;
+
+      var target = parseInt(match[1], 10);
+      var suffix = match[2] || '';
+      var duration = 1400;
+      var start = 0;
+      var startTime = null;
+
+      function tick(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var current = Math.floor(start + ((target - start) * progress));
+        el.textContent = current + suffix;
+        if (progress < 1) {
+          window.requestAnimationFrame(tick);
+        } else {
+          el.textContent = target + suffix;
+          el.dataset.animated = 'true';
+        }
+      }
+
+      window.requestAnimationFrame(tick);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      stats.forEach(function (el) { runCounter(el); });
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          runCounter(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    stats.forEach(function (el) { io.observe(el); });
   }
 
   function handleContact(form) {

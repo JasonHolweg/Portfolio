@@ -63,11 +63,11 @@ include '../includes/header.php';
 
         <h2>Hinweis zur verantwortlichen Stelle</h2>
         <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-        <!-- TODO: Replace placeholder address with your actual business address before deployment -->
         <address>
           Jason Holweg<br>
-          Musterstraße 1<br>
-          12345 Musterstadt<br>
+          Viktoriastraße 3a,<br>
+          24937 Flensburg,<br>
+          Deutschland<br>
           E-Mail: <a href="mailto:hallo@jasonholweg.de">hallo@jasonholweg.de</a>
         </address>
 

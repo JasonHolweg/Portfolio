@@ -21,11 +21,10 @@ include '../includes/header.php';
         <p class="last-updated">Stand: <?= date('d.m.Y') ?></p>
 
         <h2>Angaben gemäß § 5 TMG</h2>
-        <!-- TODO: Replace placeholder address with your actual business address before deployment -->
         <address>
           <strong>Jason Holweg</strong><br>
-          Musterstraße 1<br>
-          12345 Musterstadt<br>
+          Viktoriastraße 3a,<br>
+          24937 Flensburg,<br>
           Deutschland
         </address>
 
@@ -37,8 +36,9 @@ include '../includes/header.php';
         <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
         <address>
           Jason Holweg<br>
-          Musterstraße 1<br>
-          12345 Musterstadt
+          Viktoriastraße 3a,<br>
+          24937 Flensburg,<br>
+          Deutschland
         </address>
 
         <h2>Haftung für Inhalte</h2>
