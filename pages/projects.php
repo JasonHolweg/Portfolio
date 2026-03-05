@@ -12,7 +12,7 @@ $projects = [
     'tags'    => ['PHP', 'CMS', 'Business-Website'],
     'title'   => 'Garten2000 Handewitt',
     'desc'    => 'Webseite für ein Gartencenter mit modernem Auftritt und klarer Struktur für Leistungen, Angebote und Kontakt.',
-    'url'     => 'https://www.garten2000-handewitt.de',
+    'url'     => 'https://jasonholweg.de/demo/garten2000',
     'color'   => 'var(--c5)',
   ],
   [
@@ -34,12 +34,12 @@ $projects = [
     'color'   => 'var(--c6)',
   ],
   [
-    'emoji'   => '👨‍💻',
+    'emoji'   => '🌸',
     'bg'      => 'linear-gradient(135deg,rgba(244,114,182,0.3),rgba(168,85,247,0.3))',
-    'tags'    => ['Portfolio', 'UI/UX', 'Performance'],
-    'title'   => 'JasonHolweg.de',
-    'desc'    => 'Meine eigene Portfolio-Webseite mit Fokus auf modernes Design, klare Inhalte und schnelle Ladezeiten.',
-    'url'     => 'https://jasonholweg.de',
+    'tags'    => ['Gastronomie', 'Speisekarte', 'Reservierungssystem'],
+    'title'   => 'Garten Café Magnolia',
+    'desc'    => 'Webseite für das Garten Café Magnolia in Handewitt mit digitaler Speisekarte und integriertem Reservierungssystem.',
+    'url'     => 'https://magnolia-cafe.de',
     'color'   => 'var(--c7)',
   ],
   [
