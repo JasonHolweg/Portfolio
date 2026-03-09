@@ -26,13 +26,22 @@ include 'includes/header.php';
 <div id="main-content" style="opacity:0;">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="hero section" aria-labelledby="hero-heading">
-    <!-- Background orbs -->
-    <div class="orb" style="width:500px;height:500px;top:-100px;left:-150px;background:radial-gradient(circle,rgba(168,85,247,0.25),transparent 70%)"></div>
-    <div class="orb" style="width:400px;height:400px;bottom:50px;right:-80px;background:radial-gradient(circle,rgba(78,205,196,0.2),transparent 70%)"></div>
-    <div class="orb" style="width:300px;height:300px;top:40%;left:55%;background:radial-gradient(circle,rgba(59,130,246,0.15),transparent 70%)"></div>
+  <section class="hero section premium-effects-section" aria-labelledby="hero-heading">
+    <!-- Premium Ribbon Effect Background - MUST be behind content -->
+    <div class="premium-ribbon-wrapper" aria-hidden="true" style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;pointer-events:none;">
+      <canvas id="premium-ribbon-canvas" class="premium-ribbon-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+    </div>
 
-    <div class="container hero-content">
+    <!-- Premium Vignette Overlay -->
+    <div class="premium-vignette" aria-hidden="true" style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:1;pointer-events:none;"></div>
+
+    <!-- Background orbs -->
+    <div class="orb" style="position:absolute;width:500px;height:500px;top:-100px;left:-150px;background:radial-gradient(circle,rgba(168,85,247,0.15),transparent 70%);z-index:1;"></div>
+    <div class="orb" style="position:absolute;width:400px;height:400px;bottom:50px;right:-80px;background:radial-gradient(circle,rgba(78,205,196,0.12),transparent 70%);z-index:1;"></div>
+    <div class="orb" style="position:absolute;width:300px;height:300px;top:40%;left:55%;background:radial-gradient(circle,rgba(59,130,246,0.10),transparent 70%);z-index:1;"></div>
+
+    <!-- Hero Content - MUST be in front of effects -->
+    <div class="container hero-content" style="position:relative;z-index:10;">
       <div class="hero-badge"><span class="dot"></span> Verfügbar für neue Projekte</div>
 
       <h1 id="hero-heading">
@@ -193,3 +202,6 @@ include 'includes/header.php';
 
 <!-- Intro animation script -->
 <script src="<?= $root ?>assets/js/intro.js"></script>
+
+<!-- Premium visual effects -->
+<script src="<?= $root ?>assets/js/premium-effects.js"></script>

@@ -6,10 +6,18 @@ include '../includes/header.php';
 ?>
 
 <!-- Page Hero -->
-<header class="page-hero" role="banner">
-  <div class="orb" style="width:500px;height:500px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(78,205,196,0.2),transparent 70%)"></div>
-  <div class="orb" style="width:350px;height:350px;bottom:0;left:-80px;background:radial-gradient(circle,rgba(168,85,247,0.18),transparent 70%)"></div>
-  <div class="container" style="position:relative;z-index:1">
+<header class="page-hero premium-effects-section" role="banner">
+  <!-- Premium Antigravity Effect Background - MUST be behind content -->
+  <div class="premium-antigravity-wrapper" aria-hidden="true" style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;pointer-events:none;">
+    <canvas id="premium-antigravity-canvas" class="premium-antigravity-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+  </div>
+
+  <!-- Background orbs -->
+  <div class="orb" style="position:absolute;width:500px;height:500px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(78,205,196,0.2),transparent 70%);z-index:1;"></div>
+  <div class="orb" style="position:absolute;width:350px;height:350px;bottom:0;left:-80px;background:radial-gradient(circle,rgba(168,85,247,0.18),transparent 70%);z-index:1;"></div>
+  
+  <!-- Hero Content - MUST be in front of effects -->
+  <div class="container" style="position:relative;z-index:10;">
     <p class="section-label">Wer steckt dahinter?</p>
     <h1 class="fade-up"><span class="grad-text">Über mich</span></h1>
     <p class="fade-up fade-up-d1">Leidenschaftlicher Entwickler – mit einem Sinn für Ästhetik und Funktion.</p>
@@ -115,3 +123,6 @@ include '../includes/header.php';
 </main>
 
 <?php include '../includes/footer.php'; ?>
+
+<!-- Premium visual effects -->
+<script src="<?= $root ?>assets/js/premium-effects.js"></script>
