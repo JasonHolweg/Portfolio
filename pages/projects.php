@@ -21,7 +21,7 @@ $projects = [
     'tags'    => ['360°', 'Webplattform', 'Partnerprojekt'],
     'title'   => 'Visitfy',
     'desc'    => 'Webseite für 360-Grad-Rundgänge – umgesetzt als Partnerprojekt mit Fokus auf Präsentation und Nutzerführung.',
-    'url'     => 'https://visitfy.de/',
+    'url'     => 'https://jasonholweg.de/demo/visitfy',
     'color'   => 'var(--c4)',
   ],
   [
@@ -39,7 +39,7 @@ $projects = [
     'tags'    => ['Gastronomie', 'Speisekarte', 'Reservierungssystem'],
     'title'   => 'Garten Café Magnolia',
     'desc'    => 'Webseite für das Garten Café Magnolia in Handewitt mit digitaler Speisekarte und integriertem Reservierungssystem.',
-    'url'     => 'https://magnolia-cafe.de',
+    'url'     => 'https://jasonholweg.de/demo/magnolia',
     'color'   => 'var(--c7)',
   ],
   [
@@ -57,7 +57,7 @@ $projects = [
     'tags'    => ['Branding', 'Gastro', 'Webdesign'],
     'title'   => 'Glacelia',
     'desc'    => 'Webseite für eine Eisdiele mit französischem Eis – "Eis wie aus Paris" als zentraler Markenbotschaft.',
-    'url'     => 'https://glacelia.de',
+    'url'     => 'https://jasonholweg.de/demo/glacelia',
     'color'   => 'var(--c3)',
   ],
 ];

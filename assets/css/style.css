@@ -951,6 +951,46 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1.65;
   margin-top: 12px;
 }
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.footer-social-link svg {
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  display: block;
+}
+.footer-social-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+.site-footer__signature {
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  margin-top: 16px;
+}
+.jason-gradient-link {
+  background: linear-gradient(135deg, var(--c1), var(--c3), var(--c2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  text-decoration: none;
+}
 .footer-links-group h4 {
   font-size: 0.82rem;
   font-weight: 700;
