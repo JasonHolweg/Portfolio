@@ -7,12 +7,41 @@ include '../includes/header.php';
 /* ── Project data ─────────────────────────────────────────── */
 $projects = [
   [
+    'emoji'   => '🚗',
+    'bg'      => 'linear-gradient(135deg,rgba(59,130,246,0.3),rgba(107,114,128,0.35))',
+    'tags'    => ['Autohaus', 'Demo-Website', 'Admin-Panel'],
+    'title'   => 'Autohaus Demo',
+    'desc'    => 'Demo-Webseite fuer Autohaeuser inklusive Admin-Panel zur Pflege von Inhalten und Fahrzeugen.',
+    'actions' => [
+      [
+        'label' => 'Webseite ansehen',
+        'url'   => 'https://jasonholweg.de/demo/autohaus',
+      ],
+      [
+        'label' => 'Admin-Panel ansehen',
+        'url'   => 'https://jasonholweg.de/demo/autohaus/admin',
+      ],
+    ],
+    'credentials' => [
+      'E-Mail/User: admin@autohaus.de',
+      'Passwort: Admin1234!',
+    ],
+    'image'   => 'Autohaus.png',
+    'color'   => 'var(--c2)',
+  ],
+  [
     'emoji'   => '🌿',
     'bg'      => 'linear-gradient(135deg,rgba(16,185,129,0.3),rgba(78,205,196,0.3))',
     'tags'    => ['PHP', 'CMS', 'Business-Website'],
     'title'   => 'Garten2000 Handewitt',
     'desc'    => 'Webseite für ein Gartencenter mit modernem Auftritt und klarer Struktur für Leistungen, Angebote und Kontakt.',
-    'url'     => 'https://jasonholweg.de/demo/garten2000',
+    'actions' => [
+      [
+        'label' => 'Projekt ansehen',
+        'url'   => 'https://jasonholweg.de/demo/garten2000',
+      ],
+    ],
+    'image'   => 'garten2000-handewitt.de.png',
     'color'   => 'var(--c5)',
   ],
   [
@@ -21,7 +50,13 @@ $projects = [
     'tags'    => ['360°', 'Webplattform', 'Partnerprojekt'],
     'title'   => 'Visitfy',
     'desc'    => 'Webseite für 360-Grad-Rundgänge – umgesetzt als Partnerprojekt mit Fokus auf Präsentation und Nutzerführung.',
-    'url'     => 'https://jasonholweg.de/demo/visitfy',
+    'actions' => [
+      [
+        'label' => 'Projekt ansehen',
+        'url'   => 'https://jasonholweg.de/demo/visitfy',
+      ],
+    ],
+    'image'   => 'visitfy.de.png',
     'color'   => 'var(--c4)',
   ],
   [
@@ -30,7 +65,12 @@ $projects = [
     'tags'    => ['Admin-Panel', 'Event-Anmeldung', 'Konfigurator'],
     'title'   => 'Flora Kaffee & Eisbar',
     'desc'    => 'Webseite für meine Eiscafés mit Veranstaltungen inkl. Anmeldung, Eistorten-Konfigurator und Speisekarte mit Highlights – komplett im Admin-Panel bearbeitbar.',
-    'url'     => 'https://flora-fl.de/index.php',
+    'actions' => [
+      [
+        'label' => 'Projekt ansehen',
+        'url'   => 'https://flora-fl.de/index.php',
+      ],
+    ],
     'color'   => 'var(--c6)',
   ],
   [
@@ -39,7 +79,13 @@ $projects = [
     'tags'    => ['Gastronomie', 'Speisekarte', 'Reservierungssystem'],
     'title'   => 'Garten Café Magnolia',
     'desc'    => 'Webseite für das Garten Café Magnolia in Handewitt mit digitaler Speisekarte und integriertem Reservierungssystem.',
-    'url'     => 'https://jasonholweg.de/demo/magnolia',
+    'actions' => [
+      [
+        'label' => 'Projekt ansehen',
+        'url'   => 'https://jasonholweg.de/demo/magnolia',
+      ],
+    ],
+    'image'   => 'magnolia-cafe.de.png',
     'color'   => 'var(--c7)',
   ],
   [
@@ -48,7 +94,13 @@ $projects = [
     'tags'    => ['CMS', 'Preisliste', 'Service-Website'],
     'title'   => 'Lyvs Haarstudio',
     'desc'    => 'Schöne Friseur-Webseite mit Preisliste und vollständig bearbeitbaren Inhalten über ein Admin-Panel.',
-    'url'     => 'https://lyvs-haarstudio.de',
+    'actions' => [
+      [
+        'label' => 'Projekt ansehen',
+        'url'   => 'https://lyvs-haarstudio.de',
+      ],
+    ],
+    'image'   => 'lyvs-haarstudio.de.png',
     'color'   => 'var(--c1)',
   ],
   [
@@ -57,7 +109,13 @@ $projects = [
     'tags'    => ['Branding', 'Gastro', 'Webdesign'],
     'title'   => 'Glacelia',
     'desc'    => 'Webseite für eine Eisdiele mit französischem Eis – "Eis wie aus Paris" als zentraler Markenbotschaft.',
-    'url'     => 'https://jasonholweg.de/demo/glacelia',
+    'actions' => [
+      [
+        'label' => 'Projekt ansehen',
+        'url'   => 'https://jasonholweg.de/demo/glacelia',
+      ],
+    ],
+    'image'   => 'glacelia.de.png',
     'color'   => 'var(--c3)',
   ],
 ];
@@ -83,7 +141,25 @@ $projects = [
         <article class="project-card glass fade-up<?= $i < 3 ? ' fade-up-d' . ($i + 1) : '' ?>">
           <div class="project-img">
             <div class="project-img-bg" style="--proj-bg:<?= htmlspecialchars($p['bg']) ?>">
-              <span style="font-size:3.5rem;filter:drop-shadow(0 0 20px <?= htmlspecialchars($p['color']) ?>)"><?= $p['emoji'] ?></span>
+              <?php
+              $imageUrl = null;
+              if (!empty($p['image'])) {
+                $imagePath = __DIR__ . '/../assets/img/projekte/' . $p['image'];
+                if (is_file($imagePath)) {
+                  $imageUrl = $root . 'assets/img/projekte/' . rawurlencode($p['image']);
+                }
+              }
+              ?>
+              <?php if ($imageUrl): ?>
+              <img
+                src="<?= htmlspecialchars($imageUrl) ?>"
+                alt="Vorschau von <?= htmlspecialchars($p['title']) ?>"
+                class="project-preview"
+                loading="lazy"
+              >
+              <?php else: ?>
+              <span class="project-emoji" style="filter:drop-shadow(0 0 20px <?= htmlspecialchars($p['color']) ?>)"><?= $p['emoji'] ?></span>
+              <?php endif; ?>
             </div>
           </div>
           <div class="project-body">
@@ -94,9 +170,20 @@ $projects = [
             </div>
             <h3><?= htmlspecialchars($p['title']) ?></h3>
             <p><?= htmlspecialchars($p['desc']) ?></p>
-            <a href="<?= htmlspecialchars($p['url']) ?>" class="project-link" style="color:<?= htmlspecialchars($p['color']) ?>" target="_blank" rel="noopener noreferrer">
-              Projekt ansehen <span aria-hidden="true">↗</span>
-            </a>
+            <?php if (!empty($p['credentials'])): ?>
+            <div class="project-credentials" aria-label="Demo-Zugangsdaten">
+              <?php foreach ($p['credentials'] as $credential): ?>
+              <span><?= htmlspecialchars($credential) ?></span>
+              <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
+            <div class="project-links">
+              <?php foreach ($p['actions'] as $action): ?>
+              <a href="<?= htmlspecialchars($action['url']) ?>" class="project-link" style="color:<?= htmlspecialchars($p['color']) ?>" target="_blank" rel="noopener noreferrer">
+                <?= htmlspecialchars($action['label']) ?> <span aria-hidden="true">↗</span>
+              </a>
+              <?php endforeach; ?>
+            </div>
           </div>
         </article>
         <?php endforeach; ?>
