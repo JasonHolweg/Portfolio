@@ -265,10 +265,12 @@ a, button, input, textarea, select {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 2rem;
   background: var(--bg);
   transition: opacity 0.9s ease, visibility 0.9s ease;
 }
-    padding: 0 2rem;
+
+#intro.hide {
   opacity: 0;
   visibility: hidden;
 }
@@ -281,6 +283,8 @@ a, button, input, textarea, select {
 #intro-text {
   position: relative;
   z-index: 2;
+  width: min(100%, 42rem);
+  margin-inline: auto;
   text-align: center;
   opacity: 0;
   transform: scale(0.92) translateY(12px);
@@ -2043,6 +2047,29 @@ a, button, input, textarea, select {
 
 /* Mobile optimization */
 @media (max-width: 768px) {
+  #intro {
+    padding: max(1.5rem, env(safe-area-inset-top)) 1.25rem max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  #intro-text {
+    width: min(100%, 30rem);
+  }
+
+  #intro-text h1 {
+    font-size: clamp(2.4rem, 11vw, 4rem);
+  }
+
+  #intro-text p {
+    font-size: clamp(0.95rem, 4.5vw, 1.15rem);
+  }
+
+  #skip-btn {
+    left: 50%;
+    right: auto;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+  }
+
   .hero {
     min-height: 100svh;
     display: flex;
