@@ -82,7 +82,7 @@ include '../includes/header.php';
             <p>Je klarer dein Ziel, desto gezielter kann ich dir antworten. Wenn du noch nicht alles definiert hast, ist das völlig in Ordnung.</p>
           </div>
 
-          <form id="contact-form" novalidate aria-label="Kontaktformular">
+          <form id="contact-form" novalidate aria-label="Kontaktformular" data-endpoint="../send_mail.php">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="f-name">Name *</label>
@@ -125,26 +125,125 @@ include '../includes/header.php';
     <div class="container">
       <p class="section-label fade-up">Kurze Antworten</p>
       <h2 class="section-title fade-up fade-up-d1" id="contact-faq-heading">Häufige Fragen vor der Anfrage</h2>
-      <div class="contact-faq-grid">
-        <article class="contact-faq-item glass fade-up fade-up-d1">
-          <h3>Für welche Projekte kann ich anfragen?</h3>
-          <p>Für neue Websites, Relaunches, Landingpages, kleinere Webanwendungen oder Performance-Optimierungen.</p>
+      <div class="contact-faq" data-faq-group>
+        <article class="contact-faq-item glass" data-faq-item>
+          <h3 class="contact-faq-title">
+            <button
+              class="contact-faq-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="contact-faq-panel-1"
+              id="contact-faq-trigger-1">
+              <span class="contact-faq-question">Für welche Projekte kann ich anfragen?</span>
+              <span class="contact-faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div
+            class="contact-faq-panel"
+            id="contact-faq-panel-1"
+            role="region"
+            aria-labelledby="contact-faq-trigger-1"
+            hidden>
+            <div class="contact-faq-answer">
+              <p>Für neue Websites, Relaunches, Landingpages, kleinere Webanwendungen oder Performance-Optimierungen.</p>
+            </div>
+          </div>
         </article>
-        <article class="contact-faq-item glass fade-up fade-up-d2">
-          <h3>Wie schnell meldest du dich?</h3>
-          <p>In der Regel innerhalb von 48 Stunden, oft auch schneller.</p>
+
+        <article class="contact-faq-item glass" data-faq-item>
+          <h3 class="contact-faq-title">
+            <button
+              class="contact-faq-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="contact-faq-panel-2"
+              id="contact-faq-trigger-2">
+              <span class="contact-faq-question">Wie schnell meldest du dich?</span>
+              <span class="contact-faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div
+            class="contact-faq-panel"
+            id="contact-faq-panel-2"
+            role="region"
+            aria-labelledby="contact-faq-trigger-2"
+            hidden>
+            <div class="contact-faq-answer">
+              <p>In der Regel innerhalb von 48 Stunden, oft auch schneller.</p>
+            </div>
+          </div>
         </article>
-        <article class="contact-faq-item glass fade-up fade-up-d3">
-          <h3>Ist das Erstgespräch kostenlos?</h3>
-          <p>Ja. Das erste Gespräch ist kostenlos und unverbindlich.</p>
+
+        <article class="contact-faq-item glass" data-faq-item>
+          <h3 class="contact-faq-title">
+            <button
+              class="contact-faq-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="contact-faq-panel-3"
+              id="contact-faq-trigger-3">
+              <span class="contact-faq-question">Ist das Erstgespräch kostenlos?</span>
+              <span class="contact-faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div
+            class="contact-faq-panel"
+            id="contact-faq-panel-3"
+            role="region"
+            aria-labelledby="contact-faq-trigger-3"
+            hidden>
+            <div class="contact-faq-answer">
+              <p>Ja. Das erste Gespräch ist kostenlos und unverbindlich.</p>
+            </div>
+          </div>
         </article>
-        <article class="contact-faq-item glass fade-up fade-up-d1">
-          <h3>Arbeitest du mit Templates?</h3>
-          <p>Nein. Ich entwickle individuelle Lösungen statt auf vorgefertigte Baukasten-Templates zu setzen.</p>
+
+        <article class="contact-faq-item glass" data-faq-item>
+          <h3 class="contact-faq-title">
+            <button
+              class="contact-faq-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="contact-faq-panel-4"
+              id="contact-faq-trigger-4">
+              <span class="contact-faq-question">Arbeitest du mit Templates?</span>
+              <span class="contact-faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div
+            class="contact-faq-panel"
+            id="contact-faq-panel-4"
+            role="region"
+            aria-labelledby="contact-faq-trigger-4"
+            hidden>
+            <div class="contact-faq-answer">
+              <p>Nein. Ich entwickle individuelle Lösungen statt auf vorgefertigte Baukasten-Templates zu setzen.</p>
+            </div>
+          </div>
         </article>
-        <article class="contact-faq-item glass fade-up fade-up-d2">
-          <h3>Kann ich auch anfragen, wenn mein Projekt noch nicht komplett definiert ist?</h3>
-          <p>Ja. Genau dafür ist das Erstgespräch da: um Idee, Ziel und sinnvollen nächsten Schritt gemeinsam zu schärfen.</p>
+
+        <article class="contact-faq-item glass" data-faq-item>
+          <h3 class="contact-faq-title">
+            <button
+              class="contact-faq-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="contact-faq-panel-5"
+              id="contact-faq-trigger-5">
+              <span class="contact-faq-question">Kann ich auch anfragen, wenn mein Projekt noch nicht komplett definiert ist?</span>
+              <span class="contact-faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div
+            class="contact-faq-panel"
+            id="contact-faq-panel-5"
+            role="region"
+            aria-labelledby="contact-faq-trigger-5"
+            hidden>
+            <div class="contact-faq-answer">
+              <p>Ja. Genau dafür ist das Erstgespräch da: um Idee, Ziel und sinnvollen nächsten Schritt gemeinsam zu schärfen.</p>
+            </div>
+          </div>
         </article>
       </div>
     </div>

@@ -13,9 +13,13 @@ Website/data/event-anmeldungen.csv
 Website/data/event-warteliste.csv
 
 # Local sensitive config (do not publish credentials)
+config.mail.php
 Website/config.mail.php
 Website/config.admin.php
 
 # Deployment secrets/scripts
 .deploy.env
 deploy.sh
+
+# Mailgun
+config.mail.example.php

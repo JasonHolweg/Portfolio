@@ -1,3 +1,20 @@
+/* Responsive Anpassung für .line-2: verhindert unschönen Umbruch auf sehr großen Bildschirmen */
+.page-hero h1 .line-2 {
+  display: inline-block;
+  max-width: 100vw;
+  min-width: 0;
+  white-space: normal;
+  word-break: break-word;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1400px) {
+  .page-hero h1 .line-2 {
+    max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /* ============================================================
    Portfolio Jason Holweg – Liquid Glass Design System
    ============================================================ */
@@ -251,7 +268,7 @@ a, button, input, textarea, select {
   background: var(--bg);
   transition: opacity 0.9s ease, visibility 0.9s ease;
 }
-#intro.hide {
+    padding: 0 2rem;
   opacity: 0;
   visibility: hidden;
 }
@@ -568,11 +585,14 @@ a, button, input, textarea, select {
 }
 .hero h1 .line-1 { display: block; color: var(--text); }
 .hero h1 .line-2 {
-  display: block;
+  display: inline-block;
   background: linear-gradient(135deg, var(--c1) 0%, var(--c7) 35%, var(--c3) 70%, var(--c6) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  width: auto;
+  max-width: none;
 }
 .hero-sub {
   font-size: clamp(1rem, 1.8vw, 1.2rem);
@@ -1417,14 +1437,130 @@ a, button, input, textarea, select {
   color: var(--text-dim);
   line-height: 1.65;
 }
-.contact-faq-grid {
+.contact-faq {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+  gap: 14px;
+  width: 100%;
+  max-width: 980px;
 }
-.contact-faq-item p {
+.contact-faq-item {
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+  transition-delay: var(--faq-delay, 0ms);
+}
+.contact-faq-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact-faq-item.is-open {
+  border-color: rgba(255,255,255,0.18);
+  background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.05));
+  box-shadow: 0 18px 42px rgba(0,0,0,0.2);
+}
+.contact-faq-title {
+  margin: 0;
+}
+.contact-faq-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  min-height: 76px;
+  padding: 20px 22px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.contact-faq-trigger:hover {
+  background: rgba(255,255,255,0.04);
+}
+.contact-faq-trigger:active {
+  background: rgba(255,255,255,0.08);
+}
+.contact-faq-trigger:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18), 0 0 0 3px rgba(168,85,247,0.16);
+}
+.contact-faq-question {
+  display: block;
+  max-width: 48rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+.contact-faq-icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: transform 0.35s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.contact-faq-icon::before,
+.contact-faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.85rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.contact-faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.contact-faq-trigger[aria-expanded="true"] .contact-faq-icon {
+  background: rgba(168,85,247,0.14);
+  border-color: rgba(168,85,247,0.26);
+  transform: rotate(180deg);
+}
+.contact-faq-trigger[aria-expanded="true"] .contact-faq-icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg) scaleX(0.3);
+}
+.contact-faq-panel {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition:
+    height 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
+.contact-faq-item.is-open .contact-faq-panel {
+  opacity: 1;
+  visibility: visible;
+}
+.contact-faq-answer {
+  padding: 0 22px 22px;
+}
+.contact-faq-answer p {
+  max-width: 62ch;
+  margin: 0;
   color: var(--text-muted);
-  line-height: 1.7;
+  font-size: 0.96rem;
+  line-height: 1.78;
 }
 @media (max-width: 980px) {
   .contact-page {
@@ -1442,9 +1578,90 @@ a, button, input, textarea, select {
 
   .contact-direct,
   .contact-steps,
-  .contact-form-panel,
-  .contact-faq-item {
+  .contact-form-panel {
     padding: 24px;
+  }
+}
+@media (min-width: 700px) {
+  .contact-faq {
+    gap: 16px;
+  }
+
+  .contact-faq-trigger {
+    min-height: 84px;
+    padding: 22px 26px;
+  }
+
+  .contact-faq-question {
+    font-size: 1.06rem;
+  }
+
+  .contact-faq-answer {
+    padding: 0 26px 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-faq {
+    gap: 18px;
+  }
+
+  .contact-faq-trigger {
+    min-height: 88px;
+    padding: 24px 30px;
+  }
+
+  .contact-faq-question {
+    font-size: 1.08rem;
+  }
+
+  .contact-faq-answer {
+    padding: 0 30px 26px;
+  }
+}
+@media (max-width: 760px) {
+  .contact-direct,
+  .contact-steps,
+  .contact-form-panel {
+    padding: 24px;
+  }
+
+  .contact-faq-trigger {
+    min-height: 72px;
+    padding: 18px 18px;
+    gap: 14px;
+  }
+
+  .contact-faq-question {
+    font-size: 0.98rem;
+  }
+
+  .contact-faq-icon {
+    width: 2.05rem;
+    height: 2.05rem;
+  }
+
+  .contact-faq-answer {
+    padding: 0 18px 18px;
+  }
+
+  .contact-faq-answer p {
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-faq-item,
+  .contact-faq-panel,
+  .contact-faq-trigger,
+  .contact-faq-icon,
+  .contact-faq-icon::before,
+  .contact-faq-icon::after {
+    transition: none;
+  }
+
+  .contact-faq-item {
+    opacity: 1;
+    transform: none;
   }
 }
 

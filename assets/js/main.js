@@ -56,6 +56,9 @@
       });
     }
 
+    /* ── FAQ accordion ───────────────────────────────────── */
+    initFaqAccordions();
+
   });
 
   function initSectionReveals() {
@@ -143,9 +146,115 @@
     stats.forEach(function (el) { io.observe(el); });
   }
 
+  function initFaqAccordions() {
+    var groups = document.querySelectorAll('[data-faq-group]');
+    if (!groups.length) return;
+
+    groups.forEach(function (group) {
+      var items = Array.prototype.slice.call(group.querySelectorAll('[data-faq-item]'));
+      if (!items.length) return;
+
+      items.forEach(function (item, index) {
+        var trigger = item.querySelector('.contact-faq-trigger');
+        var panel = item.querySelector('.contact-faq-panel');
+        if (!trigger || !panel) return;
+
+        item.style.setProperty('--faq-delay', (index * 70) + 'ms');
+        panel.hidden = true;
+        panel.style.height = '0px';
+        panel.style.opacity = '0';
+
+        trigger.addEventListener('click', function () {
+          var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+          items.forEach(function (otherItem) {
+            if (otherItem !== item) {
+              closeFaqItem(otherItem);
+            }
+          });
+
+          if (isOpen) {
+            closeFaqItem(item);
+          } else {
+            openFaqItem(item);
+          }
+        });
+      });
+
+      revealFaqItems(items);
+    });
+  }
+
+  function revealFaqItems(items) {
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (item) { item.classList.add('is-visible'); });
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+    items.forEach(function (item) { io.observe(item); });
+  }
+
+  function openFaqItem(item) {
+    var trigger = item.querySelector('.contact-faq-trigger');
+    var panel = item.querySelector('.contact-faq-panel');
+    if (!trigger || !panel) return;
+
+    panel.hidden = false;
+    panel.style.visibility = 'visible';
+    panel.style.height = 'auto';
+    var targetHeight = panel.scrollHeight;
+    panel.style.height = '0px';
+    panel.offsetHeight;
+    item.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+    panel.style.height = targetHeight + 'px';
+    panel.style.opacity = '1';
+
+    window.setTimeout(function () {
+      if (trigger.getAttribute('aria-expanded') === 'true') {
+        panel.style.height = 'auto';
+      }
+    }, 420);
+  }
+
+  function closeFaqItem(item) {
+    var trigger = item.querySelector('.contact-faq-trigger');
+    var panel = item.querySelector('.contact-faq-panel');
+    if (!trigger || !panel || panel.hidden) {
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      item.classList.remove('is-open');
+      return;
+    }
+
+    panel.style.height = panel.scrollHeight + 'px';
+    panel.offsetHeight;
+    item.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+    panel.style.height = '0px';
+    panel.style.opacity = '0';
+
+    window.setTimeout(function () {
+      if (trigger.getAttribute('aria-expanded') === 'false') {
+        panel.hidden = true;
+        panel.style.visibility = 'hidden';
+      }
+    }, 420);
+  }
+
   function handleContact(form) {
     var statusEl  = document.getElementById('form-status');
     var submitBtn = form.querySelector('button[type="submit"]');
+    var originalButtonLabel = submitBtn ? submitBtn.textContent : '';
+    var endpoint = form.getAttribute('data-endpoint') || 'send_mail.php';
     var data = {
       name:    form.querySelector('[name="name"]').value.trim(),
       email:   form.querySelector('[name="email"]').value.trim(),
@@ -165,7 +274,7 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Wird gesendet…';
 
-    fetch('send_mail.php', {
+    fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -184,7 +293,7 @@
       })
       .finally(function () {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Nachricht senden';
+        submitBtn.textContent = originalButtonLabel;
       });
   }
 
