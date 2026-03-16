@@ -1410,6 +1410,31 @@ a, button, input, textarea, select {
   gap: 16px;
 }
 @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.form-group-turnstile {
+  margin-bottom: 22px;
+}
+.turnstile-shell {
+  padding: 14px;
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.turnstile-shell iframe {
+  max-width: 100%;
+}
+.form-note-compact {
+  margin-top: 10px;
+  font-size: 0.82rem;
+}
 
 .form-status {
   padding: 12px 18px;
@@ -1580,6 +1605,11 @@ a, button, input, textarea, select {
   .contact-steps,
   .contact-form-panel {
     padding: 24px;
+  }
+
+  .turnstile-shell {
+    padding: 12px;
+    border-radius: 16px;
   }
 }
 @media (min-width: 700px) {

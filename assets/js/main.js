@@ -260,6 +260,8 @@
       email:   form.querySelector('[name="email"]').value.trim(),
       subject: form.querySelector('[name="subject"]') ? form.querySelector('[name="subject"]').value.trim() : '',
       message: form.querySelector('[name="message"]').value.trim(),
+      company_website: form.querySelector('[name="company_website"]') ? form.querySelector('[name="company_website"]').value.trim() : '',
+      turnstile_token: form.querySelector('[name="turnstile_token"]') ? form.querySelector('[name="turnstile_token"]').value.trim() : '',
     };
 
     if (!data.name || !data.email || !data.message) {
@@ -268,6 +270,10 @@
     }
     if (!isValidEmail(data.email)) {
       showStatus(statusEl, 'error', 'Bitte gib eine gültige E-Mail-Adresse ein.');
+      return;
+    }
+    if (form.querySelector('[data-turnstile-container]') && !data.turnstile_token) {
+      showStatus(statusEl, 'error', 'Bitte bestätige kurz die Sicherheitsprüfung.');
       return;
     }
 
@@ -279,7 +285,16 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
-      .then(function (res) { return res.json(); })
+      .then(function (res) {
+        return res.json().catch(function () {
+          return { ok: false, error: 'Ungültige Server-Antwort.' };
+        }).then(function (json) {
+          if (!res.ok) {
+            throw new Error(json.error || ('Serverfehler (' + res.status + ')'));
+          }
+          return json;
+        });
+      })
       .then(function (json) {
         if (json.ok) {
           showStatus(statusEl, 'success', '✓ Nachricht gesendet! Ich melde mich bald.');
@@ -288,8 +303,8 @@
           throw new Error(json.error || 'Unbekannter Fehler');
         }
       })
-      .catch(function () {
-        showStatus(statusEl, 'error', 'Fehler beim Senden. Bitte versuche es erneut oder schreib direkt an hallo@jasonholweg.de.');
+      .catch(function (error) {
+        showStatus(statusEl, 'error', error && error.message ? error.message : 'Fehler beim Senden. Bitte versuche es erneut oder schreib direkt an hallo@jasonholweg.de.');
       })
       .finally(function () {
         submitBtn.disabled = false;

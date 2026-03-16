@@ -2,6 +2,15 @@
 $root      = '../';
 $pageTitle = 'Kontakt – Jason Holweg';
 $pageDesc  = 'Nimm Kontakt mit Jason Holweg auf – ich freue mich auf dein Projekt und antworte innerhalb von 48 Stunden.';
+$mailConfig = [];
+$mailConfigPath = __DIR__ . '/../config.mail.php';
+if (is_file($mailConfigPath)) {
+  $loadedMailConfig = require $mailConfigPath;
+  if (is_array($loadedMailConfig)) {
+    $mailConfig = $loadedMailConfig;
+  }
+}
+$turnstileSiteKey = trim((string) ($mailConfig['TURNSTILE_SITE_KEY'] ?? ''));
 include '../includes/header.php';
 ?>
 
@@ -107,6 +116,29 @@ include '../includes/header.php';
               <textarea class="form-control" id="f-message" name="message"
                         rows="7" placeholder="Hilfreich sind z. B. ein kurzer Satz zu deinem Unternehmen, das Ziel der Website, gewünschter Umfang und ein grober Zeitrahmen." required></textarea>
             </div>
+
+            <div class="form-honeypot" aria-hidden="true">
+              <label for="company-website">Website</label>
+              <input type="text" id="company-website" name="company_website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <?php if ($turnstileSiteKey !== ''): ?>
+              <div class="form-group form-group-turnstile">
+                <p class="form-label">Sicherheitsprüfung *</p>
+                <div
+                  class="turnstile-shell"
+                  data-turnstile-container
+                  data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>">
+                  <div
+                    class="cf-turnstile"
+                    data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"
+                    data-theme="dark"
+                    data-size="flexible"
+                    data-response-field-name="turnstile_token"></div>
+                </div>
+                <p class="form-note form-note-compact">Diese Prüfung schützt das Formular vor automatisierten Anfragen.</p>
+              </div>
+            <?php endif; ?>
 
             <button type="submit" class="btn btn-primary cta-primary" style="width:100%;justify-content:center">
               Projekt unverbindlich anfragen
@@ -249,5 +281,9 @@ include '../includes/header.php';
     </div>
   </section>
 </main>
+
+<?php if ($turnstileSiteKey !== ''): ?>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<?php endif; ?>
 
 <?php include '../includes/footer.php'; ?>

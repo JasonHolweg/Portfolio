@@ -23,3 +23,4 @@ deploy.sh
 
 # Mailgun
 config.mail.example.php
+config.mail.php
