@@ -40,7 +40,7 @@ if (is_file($aboutImagePath)) {
         <div class="fade-up">
           <div class="about-avatar" aria-hidden="true">
             <?php if ($aboutImage): ?>
-            <img src="<?= htmlspecialchars($aboutImage) ?>" alt="Jason Holweg" class="about-avatar-image" loading="lazy">
+            <img src="<?= htmlspecialchars($aboutImage) ?>" alt="Jason Holweg" class="about-avatar-image" loading="lazy" decoding="async">
             <?php else: ?>
             <span style="font-size:5rem;filter:drop-shadow(0 0 30px rgba(78,205,196,0.4))">👨‍💻</span>
             <?php endif; ?>

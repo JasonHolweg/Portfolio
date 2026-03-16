@@ -11,6 +11,7 @@ $mainJsVersion = file_exists($mainJsPath) ? filemtime($mainJsPath) : time();
       <div class="footer-brand">
         <a href="<?= $root ?>index.php" class="nav-logo">JH</a>
         <p>Webseiten für Firmen mit Stil –<br>modern, schnell und wirkungsvoll.</p>
+        <p class="footer-trust">Individuelle Webentwicklung aus Deutschland – ohne Baukasten, ohne Templates.</p>
         <div class="footer-socials" aria-label="Social Media">
           <a class="footer-social-link" href="https://instagram.com/jason.holweg" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

@@ -157,6 +157,7 @@ $projects = [
                 alt="Vorschau von <?= htmlspecialchars($p['title']) ?>"
                 class="project-preview"
                 loading="lazy"
+                decoding="async"
               >
               <?php else: ?>
               <span class="project-emoji" style="filter:drop-shadow(0 0 20px <?= htmlspecialchars($p['color']) ?>)"><?= $p['emoji'] ?></span>

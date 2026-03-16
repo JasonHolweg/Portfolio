@@ -7,6 +7,9 @@
 
   document.addEventListener('DOMContentLoaded', function () {
 
+    /* ── Section reveal ───────────────────────────────────── */
+    initSectionReveals();
+
     /* ── Scrolled nav ────────────────────────────────────── */
     var nav = document.querySelector('.site-nav');
     if (nav) {
@@ -54,6 +57,27 @@
     }
 
   });
+
+  function initSectionReveals() {
+    var sections = document.querySelectorAll('.section');
+    if (!sections.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      sections.forEach(function (section) { section.classList.add('visible'); });
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    sections.forEach(function (section) { io.observe(section); });
+  }
 
   function initFadeUps() {
     var items = document.querySelectorAll('.fade-up');

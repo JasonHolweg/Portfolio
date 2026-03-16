@@ -2,6 +2,18 @@
 $root      = '';
 $pageTitle = 'Jason Holweg – Webseiten für Firmen mit Stil';
 $pageDesc  = 'Ich entwickle individuelle, moderne Webseiten und Webanwendungen für Firmen und Selbstständige – mit flüssigem Design, schneller Performance und klarer Botschaft.';
+$pressImage = null;
+$pressImageCandidates = [
+  'assets/img/press-jason-holweg.jpg',
+  'assets/img/Zeitungsartikel.jpg',
+];
+foreach ($pressImageCandidates as $pressImageCandidate) {
+  $pressImagePath = __DIR__ . '/' . $pressImageCandidate;
+  if (is_file($pressImagePath)) {
+    $pressImage = $root . $pressImageCandidate;
+    break;
+  }
+}
 include 'includes/header.php';
 ?>
 
@@ -60,7 +72,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
         <a href="pages/Kontakt.php" class="btn btn-primary cta-primary">Projekt starten</a>
         <a href="pages/projects.php"  class="btn btn-glass cta-secondary">Projekte ansehen</a>
       </div>
-      <p class="hero-trust">No spam. Kostenloses Erstgespräch. Antwort innerhalb von 48h.</p>
+      <p class="hero-trust">No spam • Kostenloses Erstgespräch • Antwort innerhalb von 48h</p>
     </div>
 
     <div class="hero-scroll scroll-indicator" aria-hidden="true">Scroll</div>
@@ -182,6 +194,47 @@ Schnell, auffällig und auf neue Kunden optimiert.
     </div>
   </section>
 
+  <!-- ── PRESS / MEDIA ────────────────────────────────────── -->
+  <section class="section" aria-labelledby="press-heading">
+    <div class="container">
+      <p class="section-label fade-up">Presse / Medien</p>
+      <h2 class="section-title fade-up fade-up-d1" id="press-heading">Bekannt aus</h2>
+      <p class="section-subtitle fade-up fade-up-d2">Mehrfach in regionalen Medien über unternehmerische Projekte und den Aufbau von Flora erwähnt.</p>
+
+      <div class="press-layout">
+        <article class="press-featured glass fade-up fade-up-d1">
+          <div class="press-image">
+            <?php if ($pressImage): ?>
+            <img src="<?= htmlspecialchars($pressImage) ?>" alt="Presseausschnitt über Jason Holweg im Flensburger Tageblatt" class="press-image-asset" loading="lazy" decoding="async">
+            <?php else: ?>
+            <span style="font-size:5rem;filter:drop-shadow(0 0 30px rgba(78,205,196,0.4))">📰</span>
+            <?php endif; ?>
+          </div>
+          <div class="press-meta">Flensburger Tageblatt • 2025</div>
+          <h3>Sein eigener Chef mit 23 Jahren</h3>
+          <p>Bericht über Jason Holweg und die Eröffnung des Cafés Flora in Flensburg.</p>
+          <a href="https://www.shz.de/lokales/flensburg/artikel/flora-in-flensburg-weiche-jason-holweg-eroeffnet-eigenes-caf-48354512" target="_blank" rel="noopener">Artikel lesen →</a>
+        </article>
+
+        <div class="press-secondary">
+          <article class="press-card glass fade-up fade-up-d2">
+            <div class="press-meta">SHZ • 2025</div>
+            <h3>Flensburg: Zwei neue Gastronomie-Betriebe am Twedter Plack</h3>
+            <p>Bericht über die gastronomische Entwicklung und neue Konzepte rund um Flora.</p>
+            <a href="https://www.shz.de/lokales/flensburg/artikel/flensburg-zwei-neue-gastronomie-betriebe-am-twedter-plack-49094734" target="_blank" rel="noopener">Artikel lesen →</a>
+          </article>
+
+          <article class="press-card glass fade-up fade-up-d3">
+            <div class="press-meta">Flensborg Avis • 2025</div>
+            <h3>Jason har skabt sin egen kaffeperle</h3>
+            <p>Porträt über Jasons Weg zum eigenen Café und seine unternehmerische Entwicklung.</p>
+            <a href="https://www.fla.de/flensborg/lokalt/79265/jason-har-skabt-sin-egen-kaffeperle-jeg-har-altid-dromt-om-mi" target="_blank" rel="noopener">Artikel lesen →</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── PROCESS ───────────────────────────────────────────── -->
   <section class="section" aria-labelledby="process-heading">
     <div class="container">
@@ -244,7 +297,13 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <blockquote class="testimonial-quote">
             "Jason hat unsere Webseite komplett neu aufgebaut. Seitdem bekommen wir deutlich mehr Anfragen."
           </blockquote>
-          <p class="testimonial-source testimonial-author">- Visitfy</p>
+          <p class="testimonial-source testimonial-author">— Visitfy, 360° Rundgänge</p>
+        </article>
+        <article class="testimonial-card testimonial glass fade-up fade-up-d3">
+          <blockquote class="testimonial-quote">
+            "Vom ersten Entwurf bis zum Livegang lief alles strukturiert, schnell und absolut zuverlässig."
+          </blockquote>
+          <p class="testimonial-source testimonial-author">— Garten2000 GmbH &amp; Co. KG</p>
         </article>
       </div>
     </div>
@@ -267,6 +326,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
                 alt="Vorschau des Projekts Garten2000 Handewitt"
                 class="project-preview"
                 loading="lazy"
+                decoding="async"
               >
             </div>
           </div>
@@ -287,6 +347,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
                 alt="Vorschau des Projekts Visitfy"
                 class="project-preview"
                 loading="lazy"
+                decoding="async"
               >
             </div>
           </div>
@@ -307,6 +368,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
                 alt="Vorschau des Projekts Flora Kaffee & Eisbar"
                 class="project-preview"
                 loading="lazy"
+                decoding="async"
               >
             </div>
           </div>
@@ -318,6 +380,10 @@ Schnell, auffällig und auf neue Kunden optimiert.
             </div>
           </div>
         </article>
+      </div>
+
+      <div class="project-preview-cta fade-up fade-up-d3">
+        <a href="pages/projects.php" class="btn btn-primary cta-primary">Alle Projekte ansehen <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
