@@ -44,25 +44,26 @@ include 'includes/header.php';
     <div class="container hero-content" style="position:relative;z-index:10;">
       <div class="hero-badge"><span class="dot"></span> Verfügbar für neue Projekte</div>
 
-      <h1 id="hero-heading">
+      <h1 id="hero-heading" class="hero-text">
         <span class="line-1">Jason Holweg</span>
         <span class="line-2">Webseiten mit Stil.
           <br>Und Wirkung.
         </span>
       </h1>
 
-      <p class="hero-sub">
+      <p class="hero-sub hero-subheadline">
        Moderne Webseiten für Unternehmen und Selbstständige.
 Schnell, auffällig und auf neue Kunden optimiert.
       </p>
 
-      <div class="hero-actions">
-        <a href="pages/Kontakt.php" class="btn btn-primary">Projekt starten</a>
-        <a href="pages/projects.php"  class="btn btn-glass">Projekte ansehen</a>
+      <div class="hero-actions hero-buttons">
+        <a href="pages/Kontakt.php" class="btn btn-primary cta-primary">Projekt starten</a>
+        <a href="pages/projects.php"  class="btn btn-glass cta-secondary">Projekte ansehen</a>
       </div>
+      <p class="hero-trust">No spam. Kostenloses Erstgespräch. Antwort innerhalb von 48h.</p>
     </div>
 
-    <div class="hero-scroll" aria-hidden="true">Scroll</div>
+    <div class="hero-scroll scroll-indicator" aria-hidden="true">Scroll</div>
   </section>
 
   <!-- ── SERVICES ─────────────────────────────────────────── -->
@@ -239,11 +240,83 @@ Schnell, auffällig und auf neue Kunden optimiert.
       </h2>
 
       <div class="trust-grid">
-        <article class="testimonial-card glass fade-up fade-up-d2">
-          <blockquote>
+        <article class="testimonial-card testimonial glass fade-up fade-up-d2">
+          <blockquote class="testimonial-quote">
             "Jason hat unsere Webseite komplett neu aufgebaut. Seitdem bekommen wir deutlich mehr Anfragen."
           </blockquote>
-          <p class="testimonial-source">- Visitfy</p>
+          <p class="testimonial-source testimonial-author">- Visitfy</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECT PREVIEW ──────────────────────────────────── -->
+  <section class="section" aria-labelledby="project-preview-heading">
+    <div class="container">
+      <p class="section-label fade-up">Ausgewählte Projekte</p>
+      <h2 class="section-title fade-up fade-up-d1" id="project-preview-heading">
+        Ein kleiner Einblick in<br><span>aktuelle Arbeiten</span>
+      </h2>
+
+      <div class="projects-grid">
+        <article class="project-card glass fade-up fade-up-d1">
+          <div class="project-img">
+            <div class="project-img-bg" style="--proj-bg:linear-gradient(135deg,rgba(16,185,129,0.3),rgba(78,205,196,0.3))">
+              <img
+                src="<?= $root ?>assets/img/projekte/garten2000-handewitt.de.png"
+                alt="Vorschau des Projekts Garten2000 Handewitt"
+                class="project-preview"
+                loading="lazy"
+              >
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Garten2000 Handewitt</h3>
+            <p>Moderner Webauftritt für ein Gartencenter mit klarer Nutzerführung und starkem lokalem Auftritt.</p>
+            <div class="project-links">
+              <a href="pages/projects.php" class="project-link">Projekt ansehen <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card glass fade-up fade-up-d2">
+          <div class="project-img">
+            <div class="project-img-bg" style="--proj-bg:linear-gradient(135deg,rgba(251,191,36,0.3),rgba(249,115,22,0.3))">
+              <img
+                src="<?= $root ?>assets/img/projekte/visitfy.de.png"
+                alt="Vorschau des Projekts Visitfy"
+                class="project-preview"
+                loading="lazy"
+              >
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Visitfy</h3>
+            <p>Präsentationsstarke Website für 360-Grad-Rundgänge mit Fokus auf Vertrauen, Klarheit und Anfragen.</p>
+            <div class="project-links">
+              <a href="pages/projects.php" class="project-link">Projekt ansehen <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card glass fade-up fade-up-d3">
+          <div class="project-img">
+            <div class="project-img-bg" style="--proj-bg:linear-gradient(135deg,rgba(59,130,246,0.3),rgba(14,165,233,0.3))">
+              <img
+                src="<?= $root ?>assets/img/projekte/flora-fl.de.png"
+                alt="Vorschau des Projekts Flora Kaffee & Eisbar"
+                class="project-preview"
+                loading="lazy"
+              >
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Flora Kaffee &amp; Eisbar</h3>
+            <p>Website mit Event-Bereich, Speisekarte und CMS-Logik für schnelle inhaltliche Pflege im Alltag.</p>
+            <div class="project-links">
+              <a href="pages/projects.php" class="project-link">Projekt ansehen <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
         </article>
       </div>
     </div>
