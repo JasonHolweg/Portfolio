@@ -230,6 +230,25 @@ Schnell, auffällig und auf neue Kunden optimiert.
     </div>
   </section>
 
+  <!-- ── TRUST / TESTIMONIAL ──────────────────────────────── -->
+  <section class="section" aria-labelledby="trust-heading">
+    <div class="container">
+      <p class="section-label fade-up">Für wen ich arbeite</p>
+      <h2 class="section-title fade-up fade-up-d1" id="trust-heading">
+        Vertrauen entsteht durch<br><span>echte Ergebnisse</span>
+      </h2>
+
+      <div class="trust-grid">
+        <article class="testimonial-card glass fade-up fade-up-d2">
+          <blockquote>
+            "Jason hat unsere Webseite komplett neu aufgebaut. Seitdem bekommen wir deutlich mehr Anfragen."
+          </blockquote>
+          <p class="testimonial-source">- Visitfy</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CTA ───────────────────────────────────────────────── -->
   <section class="cta-section" aria-labelledby="cta-heading">
     <!-- Background orbs -->
