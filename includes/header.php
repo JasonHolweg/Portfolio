@@ -7,6 +7,8 @@
 if (!isset($root)) $root = '';
 if (!isset($pageTitle)) $pageTitle = 'Jason Holweg – Webseiten für Firmen mit Stil';
 if (!isset($pageDesc)) $pageDesc  = 'Professionelle Webentwicklung mit modernem Design. Ich erstelle individuelle Webseiten für Firmen und Selbstständige.';
+$stylePath = __DIR__ . '/../assets/css/style.css';
+$styleVersion = file_exists($stylePath) ? filemtime($stylePath) : time();
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -23,7 +25,7 @@ if (!isset($pageDesc)) $pageDesc  = 'Professionelle Webentwicklung mit modernem 
   <link rel="icon" href="<?= $root ?>assets/img/favicon.svg" type="image/svg+xml">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="<?= $root ?>assets/css/style.css">
+  <link rel="stylesheet" href="<?= $root ?>assets/css/style.css?v=<?= $styleVersion ?>">
 
   <!-- Preconnect for Google Fonts (loaded in CSS @import) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +39,7 @@ if (!isset($pageDesc)) $pageDesc  = 'Professionelle Webentwicklung mit modernem 
 
   <ul class="nav-links" role="list">
     <li><a href="<?= $root ?>index.php">Start</a></li>
+    <li><a href="<?= $root ?>index.php#services">Leistungen</a></li>
     <li><a href="<?= $root ?>pages/aboutme.php">Über mich</a></li>
     <li><a href="<?= $root ?>pages/projects.php">Projekte</a></li>
     <li><a href="<?= $root ?>pages/Kontakt.php">Kontakt</a></li>
@@ -54,6 +57,7 @@ if (!isset($pageDesc)) $pageDesc  = 'Professionelle Webentwicklung mit modernem 
 <!-- Mobile nav -->
 <nav class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Mobilnavigation">
   <a href="<?= $root ?>index.php">Start</a>
+  <a href="<?= $root ?>index.php#services">Leistungen</a>
   <a href="<?= $root ?>pages/aboutme.php">Über mich</a>
   <a href="<?= $root ?>pages/projects.php">Projekte</a>
   <a href="<?= $root ?>pages/Kontakt.php">Kontakt</a>

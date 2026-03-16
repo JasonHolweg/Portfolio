@@ -32,6 +32,8 @@
     },
   };
 
+  const INTRO_STORAGE_KEY = 'jh_intro_seen';
+
   /* ══════════════════════════════════════════════════════════
      STATE
   ══════════════════════════════════════════════════════════ */
@@ -177,6 +179,11 @@
      INTRO FLOW
   ══════════════════════════════════════════════════════════ */
   function init() {
+    if (shouldSkipIntro()) {
+      skipIntroImmediately();
+      return;
+    }
+
     canvas = document.getElementById('intro-canvas');
     if (!canvas) return;
 
@@ -233,6 +240,8 @@
   function dismissIntro() {
     if (skipCalled) return;
 
+    markIntroSeen();
+
     const introEl = document.getElementById('intro');
     if (!introEl) return;
 
@@ -260,6 +269,8 @@
     if (skipCalled) return;
     skipCalled = true;
 
+    markIntroSeen();
+
     isRunning = false;
     cancelAnimationFrame(raf);
 
@@ -271,6 +282,45 @@
         revealMain();
       }, CONFIG.fadeOutDuration);
     }
+  }
+
+  function shouldSkipIntro() {
+    return hasSeenIntro() || hasTargetHash();
+  }
+
+  function hasSeenIntro() {
+    try {
+      return window.localStorage.getItem(INTRO_STORAGE_KEY) === 'true';
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function markIntroSeen() {
+    try {
+      window.localStorage.setItem(INTRO_STORAGE_KEY, 'true');
+    } catch (err) {
+      // Ignore storage access issues and fall back to default intro behavior.
+    }
+  }
+
+  function hasTargetHash() {
+    if (!window.location.hash) return false;
+
+    const targetId = window.location.hash.slice(1);
+    return Boolean(targetId && document.getElementById(targetId));
+  }
+
+  function skipIntroImmediately() {
+    markIntroSeen();
+
+    const introEl = document.getElementById('intro');
+    if (introEl) {
+      introEl.classList.add('hide');
+      introEl.style.display = 'none';
+    }
+
+    revealMain();
   }
 
   /* ══════════════════════════════════════════════════════════

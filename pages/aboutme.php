@@ -3,6 +3,12 @@ $root      = '../';
 $pageTitle = 'Über mich – Jason Holweg';
 $pageDesc  = 'Ich bin Jason Holweg, Webentwickler und Designer aus Deutschland. Ich erstelle moderne Webseiten für Firmen und Selbstständige.';
 include '../includes/header.php';
+
+$aboutImage = null;
+$aboutImagePath = __DIR__ . '/../assets/img/jason.jpeg';
+if (is_file($aboutImagePath)) {
+  $aboutImage = $root . 'assets/img/jason.jpeg';
+}
 ?>
 
 <!-- Page Hero -->
@@ -33,7 +39,11 @@ include '../includes/header.php';
         <!-- Avatar -->
         <div class="fade-up">
           <div class="about-avatar" aria-hidden="true">
+            <?php if ($aboutImage): ?>
+            <img src="<?= htmlspecialchars($aboutImage) ?>" alt="Jason Holweg" class="about-avatar-image" loading="lazy">
+            <?php else: ?>
             <span style="font-size:5rem;filter:drop-shadow(0 0 30px rgba(78,205,196,0.4))">👨‍💻</span>
+            <?php endif; ?>
           </div>
         </div>
 

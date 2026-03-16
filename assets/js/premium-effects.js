@@ -22,13 +22,13 @@
     // Ribbon Effect Settings
     ribbon: {
       enabled: true,
-      count: 3,                    // Number of ribbon strands (keep low for elegance)
-      pointCount: 80,              // Points per ribbon (smoothness)
-      speed: 0.0003,               // Movement speed (lower = slower, more luxurious)
-      amplitude: 0.15,             // Wave amplitude (relative to canvas height)
-      thickness: { min: 1, max: 3 }, // Ribbon thickness range
-      opacity: 0.12,               // Maximum opacity (keep low for subtlety)
-      blur: 40,                    // Gaussian blur amount
+      count: 4,                    // Match the intro ribbon density
+      pointCount: 60,              // Match the intro smoothness profile
+      speed: 0.0004,               // Same flow speed as the intro
+      amplitude: 0.18,             // Same wave amplitude as the intro
+      thickness: { min: 2, max: 5 }, // Same strand weight as the intro
+      opacity: 0.2,                // Same visibility as the intro
+      blur: 0,                     // Keep the hero ribbons crisp like the intro
       flowDirection: 1,            // 1 = left-to-right, -1 = right-to-left
     },
 

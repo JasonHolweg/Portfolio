@@ -71,6 +71,7 @@ $projects = [
         'url'   => 'https://flora-fl.de/index.php',
       ],
     ],
+    'image'   => 'flora-fl.de.png',
     'color'   => 'var(--c6)',
   ],
   [

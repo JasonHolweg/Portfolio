@@ -1,4 +1,8 @@
-<?php if (!isset($root)) $root = ''; ?>
+<?php
+if (!isset($root)) $root = '';
+$mainJsPath = __DIR__ . '/../assets/js/main.js';
+$mainJsVersion = file_exists($mainJsPath) ? filemtime($mainJsPath) : time();
+?>
 <!-- ── Footer ────────────────────────────────────────────── -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
@@ -56,6 +60,11 @@
         <a href="<?= $root ?>pages/Kontakt.php">Kontaktformular</a>
       </div>
 
+      <div class="footer-links-group">
+        <h4>Standort</h4>
+        <p>Webdesigner aus Deutschland – spezialisiert auf moderne Webseiten für Unternehmen und Selbstständige.</p>
+      </div>
+
     </div>
 
     <div class="footer-bottom">
@@ -68,6 +77,6 @@
   </div>
 </footer>
 
-<script src="<?= $root ?>assets/js/main.js"></script>
+<script src="<?= $root ?>assets/js/main.js?v=<?= $mainJsVersion ?>"></script>
 </body>
 </html>
