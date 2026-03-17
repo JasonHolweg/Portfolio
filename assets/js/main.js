@@ -13,6 +13,7 @@
     initProcessReveal();
     initTestimonialReveal();
     initProjectReveal();
+    initProjectPageReveal();
     initClickableProjectCards();
 
     /* ── Scrolled nav ────────────────────────────────────── */
@@ -88,7 +89,7 @@
   }
 
   function initFadeUps() {
-    var items = document.querySelectorAll('.fade-up:not(.service-reveal):not(.process-reveal):not(.testimonial-reveal):not(.project-reveal)');
+    var items = document.querySelectorAll('.fade-up:not(.service-reveal):not(.process-reveal):not(.testimonial-reveal):not(.project-reveal):not(.project-page-reveal)');
     if (!items.length) return;
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -288,6 +289,47 @@
         openProjectLink(href, target);
       });
     });
+  }
+
+  function initProjectPageReveal() {
+    var grid = document.querySelector('.projects-page-grid');
+    if (!grid) return;
+
+    var items = Array.prototype.slice.call(grid.querySelectorAll('.project-page-reveal'));
+    if (!items.length) return;
+
+    function revealVisibleRows() {
+      var viewportTrigger = window.scrollY + (window.innerHeight * 0.88);
+
+      items.forEach(function (item) {
+        var rowTop = item.getBoundingClientRect().top + window.scrollY;
+
+        if (rowTop <= viewportTrigger) {
+          item.classList.add('visible');
+        }
+      });
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      revealVisibleRows();
+      return;
+    }
+
+    var ticking = false;
+
+    function onScrollOrResize() {
+      if (ticking) return;
+      ticking = true;
+
+      window.requestAnimationFrame(function () {
+        revealVisibleRows();
+        ticking = false;
+      });
+    }
+
+    revealVisibleRows();
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
   }
 
   function openProjectLink(href, target) {

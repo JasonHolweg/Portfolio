@@ -35,7 +35,10 @@ $styleVersion = file_exists($stylePath) ? filemtime($stylePath) : time();
 
 <!-- ── Navigation ────────────────────────────────────────── -->
 <nav class="site-nav" role="navigation" aria-label="Hauptnavigation">
-  <a href="<?= $root ?>index.php" class="nav-logo" aria-label="Jason Holweg – Startseite">JH</a>
+  <a href="<?= $root ?>index.php" class="nav-brand" aria-label="Jason Holweg – Startseite">
+    <span class="nav-brand__mark" aria-hidden="true">JH</span>
+    <span class="nav-brand__text">Jason Holweg</span>
+  </a>
 
   <ul class="nav-links" role="list">
     <li><a href="<?= $root ?>index.php">Start</a></li>

@@ -198,12 +198,26 @@ Schnell, auffällig und auf neue Kunden optimiert.
   <!-- ── PRESS / MEDIA ────────────────────────────────────── -->
   <section class="section" aria-labelledby="press-heading">
     <div class="container">
-      <p class="section-label fade-up">Presse / Medien</p>
-      <h2 class="section-title fade-up fade-up-d1" id="press-heading">Bekannt aus</h2>
-      <p class="section-subtitle fade-up fade-up-d2">Mehrfach in regionalen Medien über unternehmerische Projekte und den Aufbau von Flora erwähnt.</p>
+      <div class="press-head">
+        <div class="press-head__copy">
+          <p class="section-label fade-up">Presse / Medien</p>
+          <h2 class="section-title fade-up fade-up-d1" id="press-heading">
+            Bekannt aus <br> <span>lokalen Medien</span>
+          </h2>
+          <p class="press-intro fade-up fade-up-d2">
+            Regionale Medien haben bereits mehrfach ueber unternehmerische Projekte, Gruender-Momentum und den Aufbau von Flora berichtet.
+          </p>
+        </div>
+
+        <div class="press-proof fade-up fade-up-d2" aria-label="Presse-Vertrauen">
+          <span class="press-proof__label">Trusted by media</span>
+          <span class="press-proof__value">3 redaktionelle Erwähnungen</span>
+        </div>
+      </div>
 
       <div class="press-layout">
         <article class="press-featured glass fade-up fade-up-d1">
+          <div class="press-card__badge">Ausgewählte Berichterstattung</div>
           <div class="press-image">
             <?php if ($pressImage): ?>
             <img src="<?= htmlspecialchars($pressImage) ?>" alt="Presseausschnitt über Jason Holweg im Flensburger Tageblatt" class="press-image-asset" loading="lazy" decoding="async">
@@ -211,25 +225,31 @@ Schnell, auffällig und auf neue Kunden optimiert.
             <span style="font-size:5rem;filter:drop-shadow(0 0 30px rgba(78,205,196,0.4))">📰</span>
             <?php endif; ?>
           </div>
-          <div class="press-meta">Flensburger Tageblatt • 2025</div>
-          <h3>Sein eigener Chef mit 23 Jahren</h3>
-          <p>Bericht über Jason Holweg und die Eröffnung des Cafés Flora in Flensburg.</p>
-          <a href="https://www.shz.de/lokales/flensburg/artikel/flora-in-flensburg-weiche-jason-holweg-eroeffnet-eigenes-caf-48354512" target="_blank" rel="noopener">Artikel lesen →</a>
+          <div class="press-card__content">
+            <div class="press-meta">Flensburger Tageblatt • 2025</div>
+            <h3>Sein eigener Chef mit 23 Jahren</h3>
+            <p>Bericht ueber Jason Holweg und die Eroeffnung des Cafes Flora in Flensburg.</p>
+            <a href="https://www.shz.de/lokales/flensburg/artikel/flora-in-flensburg-weiche-jason-holweg-eroeffnet-eigenes-caf-48354512" target="_blank" rel="noopener">Artikel lesen →</a>
+          </div>
         </article>
 
         <div class="press-secondary">
           <article class="press-card glass fade-up fade-up-d2">
-            <div class="press-meta">SHZ • 2025</div>
-            <h3>Flensburg: Zwei neue Gastronomie-Betriebe am Twedter Plack</h3>
-            <p>Bericht über die gastronomische Entwicklung und neue Konzepte rund um Flora.</p>
-            <a href="https://www.shz.de/lokales/flensburg/artikel/flensburg-zwei-neue-gastronomie-betriebe-am-twedter-plack-49094734" target="_blank" rel="noopener">Artikel lesen →</a>
+            <div class="press-card__content">
+              <div class="press-meta">SHZ • 2025</div>
+              <h3>Flensburg: Zwei neue Gastronomie-Betriebe am Twedter Plack</h3>
+              <p>Bericht ueber die gastronomische Entwicklung und neue Konzepte rund um Flora.</p>
+              <a href="https://www.shz.de/lokales/flensburg/artikel/flensburg-zwei-neue-gastronomie-betriebe-am-twedter-plack-49094734" target="_blank" rel="noopener">Artikel lesen →</a>
+            </div>
           </article>
 
           <article class="press-card glass fade-up fade-up-d3">
-            <div class="press-meta">Flensborg Avis • 2025</div>
-            <h3>Jason har skabt sin egen kaffeperle</h3>
-            <p>Porträt über Jasons Weg zum eigenen Café und seine unternehmerische Entwicklung.</p>
-            <a href="https://www.fla.de/flensborg/lokalt/79265/jason-har-skabt-sin-egen-kaffeperle-jeg-har-altid-dromt-om-mi" target="_blank" rel="noopener">Artikel lesen →</a>
+            <div class="press-card__content">
+              <div class="press-meta">Flensborg Avis • 2025</div>
+              <h3>Jason har skabt sin egen kaffeperle</h3>
+              <p>Portraet ueber Jasons Weg zum eigenen Cafe und seine unternehmerische Entwicklung.</p>
+              <a href="https://www.fla.de/flensborg/lokalt/79265/jason-har-skabt-sin-egen-kaffeperle-jeg-har-altid-dromt-om-mi" target="_blank" rel="noopener">Artikel lesen →</a>
+            </div>
           </article>
         </div>
       </div>
@@ -415,18 +435,42 @@ Schnell, auffällig und auf neue Kunden optimiert.
 
   <!-- ── CTA ───────────────────────────────────────────────── -->
   <section class="cta-section" aria-labelledby="cta-heading">
-    <!-- Background orbs -->
-    <div class="orb" style="width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(168,85,247,0.18),transparent 70%);opacity:0.7"></div>
+    <div class="cta-section__ambient cta-section__ambient--violet" aria-hidden="true"></div>
+    <div class="cta-section__ambient cta-section__ambient--cyan" aria-hidden="true"></div>
+    <div class="cta-section__grid" aria-hidden="true"></div>
 
-    <div class="container" style="position:relative;z-index:1">
-      <h2 class="fade-up" id="cta-heading">
-        Lass uns deine neue<br>
-        <span class="grad-text">Webseite planen.</span>
-      </h2>
-      <p class="fade-up fade-up-d1">
-        Gemeinsam etwas Großartiges bauen. Schreib mir – ich antworte innerhalb von 48 Stunden.
-      </p>
-      <a href="pages/Kontakt.php" class="btn btn-primary fade-up fade-up-d2">Kostenloses Erstgespräch buchen →</a>
+    <div class="container">
+      <div class="cta-panel glass">
+        <div class="cta-panel__noise" aria-hidden="true"></div>
+        <div class="cta-panel__border-glow" aria-hidden="true"></div>
+
+        <div class="cta-copy">
+          <p class="cta-kicker fade-up">Bereit für den nächsten Schritt</p>
+          <h2 class="fade-up" id="cta-heading">
+            Lass uns deine neue<br>
+            <span class="grad-text">Webseite planen.</span>
+          </h2>
+          <p class="cta-lead fade-up fade-up-d1">
+            Gemeinsam etwas Großartiges bauen. Schreib mir für ein unverbindliches Erstgespräch und wir entwickeln einen Auftritt, der hochwertig wirkt, Vertrauen aufbaut und Anfragen erzeugt.
+          </p>
+          <div class="cta-actions fade-up fade-up-d2">
+            <a href="pages/Kontakt.php" class="btn btn-primary cta-primary cta-primary--hero">Kostenloses Erstgespräch buchen <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="cta-signals fade-up fade-up-d3" aria-label="Vorteile">
+            <span class="cta-signal">Antwort innerhalb von 48h</span>
+            <span class="cta-signal">Strategisch, modern, performant</span>
+            <span class="cta-signal">Klarer Prozess ohne Chaos</span>
+          </div>
+        </div>
+
+        <aside class="cta-side fade-up fade-up-d2" aria-label="Warum jetzt anfragen">
+          <div class="cta-side__card">
+            <span class="cta-side__label">Finaler Conversion-Moment</span>
+            <p class="cta-side__title">Von der Idee zum starken digitalen Auftritt.</p>
+            <p class="cta-side__text">Design, Entwicklung und Conversion-Fokus in einem klar geführten Prozess, damit aus einer Anfrage ein sauber umgesetztes Ergebnis wird.</p>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 

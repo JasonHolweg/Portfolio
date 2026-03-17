@@ -133,13 +133,20 @@ $projects = [
 </header>
 
 <main>
-  <section class="section" aria-labelledby="projects-heading">
+  <section class="section premium-effects-section projects-showcase-section" aria-labelledby="projects-heading">
+    <div class="premium-ribbon-wrapper" aria-hidden="true">
+      <canvas id="premium-ribbon-canvas" class="premium-ribbon-canvas"></canvas>
+    </div>
+    <div class="premium-vignette" aria-hidden="true"></div>
+    <div class="orb" style="width:520px;height:520px;top:-120px;left:-140px;background:radial-gradient(circle,rgba(168,85,247,0.12),transparent 72%);z-index:0;"></div>
+    <div class="orb" style="width:440px;height:440px;bottom:-80px;right:-100px;background:radial-gradient(circle,rgba(78,205,196,0.1),transparent 72%);z-index:0;"></div>
     <div class="container">
       <h2 class="sr-only" id="projects-heading">Alle Projekte</h2>
 
-      <div class="projects-grid">
+      <div class="projects-grid projects-page-grid">
         <?php foreach ($projects as $i => $p): ?>
-        <article class="project-card glass fade-up<?= $i < 3 ? ' fade-up-d' . ($i + 1) : '' ?>">
+        <article class="project-card project-page-reveal glass fade-up"
+                 style="--project-accent:<?= htmlspecialchars($p['color']) ?>;--project-delay:<?= htmlspecialchars(number_format(($i % 4) * 0.12 + floor($i / 4) * 0.04, 2, '.', '')) ?>s;">
           <div class="project-img">
             <div class="project-img-bg" style="--proj-bg:<?= htmlspecialchars($p['bg']) ?>">
               <?php
@@ -204,4 +211,5 @@ $projects = [
   </section>
 </main>
 
+<script src="<?= $root ?>assets/js/premium-effects.js"></script>
 <?php include '../includes/footer.php'; ?>
