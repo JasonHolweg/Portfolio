@@ -691,7 +691,7 @@ a, button, input, textarea, select {
 ═══════════════════════════════════════════════════════════ */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   margin-top: 56px;
 }
@@ -765,6 +765,34 @@ a, button, input, textarea, select {
   font-size: 0.92rem;
   color: var(--text-muted);
   line-height: 1.65;
+}
+.service-card.service-reveal {
+  --service-enter-x: 0px;
+  --service-enter-y: 32px;
+  opacity: 0;
+  transform: translate3d(var(--service-enter-x), calc(var(--service-enter-y) + var(--card-lift, 0px)), 0) scale(0.96);
+  transition:
+    opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+  transition-delay: var(--service-delay, 0s);
+  will-change: transform, opacity;
+}
+.service-card.service-reveal.visible {
+  opacity: 1;
+  transform: translate3d(0, var(--card-lift, 0px), 0) scale(1);
+}
+.services-grid > .service-reveal:nth-child(3n + 1) {
+  --service-enter-x: min(-42vw, -520px);
+  --service-enter-y: 0px;
+}
+.services-grid > .service-reveal:nth-child(3n + 2) {
+  --service-enter-x: 0px;
+  --service-enter-y: 140px;
+}
+.services-grid > .service-reveal:nth-child(3n) {
+  --service-enter-x: min(42vw, 520px);
+  --service-enter-y: 0px;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -926,6 +954,20 @@ a, button, input, textarea, select {
   position: relative;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
+.step-card.process-reveal {
+  opacity: 0;
+  transform: translate3d(0, 72px, 0);
+  transition:
+    opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease,
+    background 0.45s ease;
+}
+.step-card.process-reveal.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
 .step-card::before {
   content: attr(data-step);
   position: absolute;
@@ -942,6 +984,17 @@ a, button, input, textarea, select {
 .step-card > * {
   position: relative;
   z-index: 1;
+}
+.step-card.process-reveal::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 20% 15%, rgba(78,205,196,0.16), transparent 45%), radial-gradient(circle at 80% 20%, rgba(168,85,247,0.18), transparent 42%);
+  opacity: 0;
+  filter: blur(0px);
+  pointer-events: none;
+  transition: opacity 0.45s ease, filter 0.45s ease;
 }
 .step-card h3 {
   font-size: 1rem;
@@ -980,11 +1033,30 @@ a, button, input, textarea, select {
   filter: saturate(1.15);
   transform: translateY(-2px) scale(1.04);
 }
+.step-card.process-reveal.is-active {
+  border-color: rgba(78,205,196,0.28);
+  box-shadow: 0 0 0 1px rgba(78,205,196,0.1), 0 16px 42px rgba(78,205,196,0.14), 0 24px 56px rgba(168,85,247,0.18);
+  background: rgba(255,255,255,0.045);
+}
+.step-card.process-reveal.is-active::after {
+  opacity: 1;
+  filter: blur(12px);
+}
+.step-card.process-reveal.is-active .step-icon {
+  color: #ffffff;
+  border-color: rgba(78,205,196,0.42);
+  background: linear-gradient(135deg, rgba(78,205,196,0.34), rgba(168,85,247,0.42));
+  box-shadow: 0 0 0 1px rgba(78,205,196,0.12), 0 0 20px rgba(78,205,196,0.42), 0 0 38px rgba(168,85,247,0.3);
+  filter: saturate(1.15);
+  transform: translateY(-2px) scale(1.04);
+}
 
 /* ═══════════════════════════════════════════════════════════
    TRUST / TESTIMONIAL
 ═══════════════════════════════════════════════════════════ */
 .trust-grid {
+  display: grid;
+  gap: 28px;
   margin-top: 42px;
 }
 .testimonial-card {
@@ -995,6 +1067,21 @@ a, button, input, textarea, select {
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.02);
+  overflow: hidden;
+}
+.testimonial-card.testimonial-reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0) scale(0.82);
+  transform-origin: left bottom;
+  transition:
+    opacity 0.7s cubic-bezier(0.18, 0.9, 0.32, 1.18),
+    transform 0.7s cubic-bezier(0.18, 0.9, 0.32, 1.18),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+.testimonial-card.testimonial-reveal.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
 }
 .testimonial-card::before {
   content: "";
@@ -1009,6 +1096,53 @@ a, button, input, textarea, select {
   opacity: 0.25;
   pointer-events: none;
 }
+.testimonial-card.testimonial-reveal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40%;
+  width: 34%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255,255,255,0.05) 28%,
+    rgba(255,255,255,0.36) 50%,
+    rgba(255,255,255,0.08) 72%,
+    transparent 100%
+  );
+  opacity: 0;
+  transform: skewX(-18deg) translateX(0);
+  pointer-events: none;
+}
+.testimonial-card.testimonial-reveal.is-popping {
+  border-color: rgba(78,205,196,0.18);
+  box-shadow: 0 14px 32px rgba(10, 16, 34, 0.18), 0 0 0 1px rgba(78,205,196,0.06);
+}
+.testimonial-card.testimonial-reveal.is-shimmering::after {
+  opacity: 1;
+  animation: testimonialShimmer 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.testimonial-card.testimonial-reveal.is-shimmering {
+  box-shadow: 0 18px 42px rgba(10, 16, 34, 0.2), 0 0 0 1px rgba(78,205,196,0.08);
+}
+.testimonial-card.testimonial-reveal blockquote::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  bottom: -12px;
+  width: 24px;
+  height: 24px;
+  background: inherit;
+  border-left: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transform: rotate(-45deg);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.testimonial-card.testimonial-reveal.visible blockquote::after {
+  opacity: 1;
+}
 .testimonial,
 .testimonial-card blockquote {
   font-style: italic;
@@ -1016,6 +1150,9 @@ a, button, input, textarea, select {
   line-height: 1.6;
   color: var(--text);
   letter-spacing: -0.01em;
+}
+.testimonial-card blockquote {
+  position: relative;
 }
 .testimonial-author,
 .testimonial-source {
@@ -1026,6 +1163,20 @@ a, button, input, textarea, select {
   color: var(--c2);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+@keyframes testimonialShimmer {
+  0% {
+    opacity: 0;
+    transform: skewX(-18deg) translateX(0);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: skewX(-18deg) translateX(420%);
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1051,6 +1202,49 @@ a, button, input, textarea, select {
   flex-direction: column;
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.02);
+}
+.project-card-clickable {
+  cursor: pointer;
+}
+.project-card-clickable:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--project-accent, var(--c2)) 70%, white);
+  outline-offset: 4px;
+}
+.project-card.project-reveal {
+  --project-enter-x: 0px;
+  --project-enter-y: 36px;
+  opacity: 0;
+  transform: translate3d(var(--project-enter-x), var(--project-enter-y), 0) scale(0.95);
+  transition:
+    opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.9s ease,
+    border-color 0.9s ease,
+    filter 1s ease;
+  filter: saturate(0.88);
+}
+.project-card.project-reveal.visible {
+  opacity: 1;
+  transform: translate3d(0, var(--card-lift, 0px), 0) scale(1);
+  border-color: color-mix(in srgb, var(--project-accent, var(--c2)) 28%, rgba(255,255,255,0.08));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--project-accent, var(--c2)) 14%, transparent),
+    0 0 34px color-mix(in srgb, var(--project-accent, var(--c2)) 24%, transparent),
+    0 18px 42px rgba(0,0,0,0.28);
+  filter: saturate(1);
+  animation: projectGlowPulse 4.8s ease-in-out infinite;
+}
+.projects-grid > .project-reveal:nth-child(3n + 1) {
+  --project-enter-x: min(-38vw, -460px);
+  --project-enter-y: 0px;
+}
+.projects-grid > .project-reveal:nth-child(3n + 2) {
+  --project-enter-x: 0px;
+  --project-enter-y: 120px;
+}
+.projects-grid > .project-reveal:nth-child(3n) {
+  --project-enter-x: min(38vw, 460px);
+  --project-enter-y: 0px;
 }
 .project-card::before {
   content: "";
@@ -1094,6 +1288,14 @@ a, button, input, textarea, select {
   position: relative;
   overflow: hidden;
 }
+.project-tags-overlay {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  margin-bottom: 0;
+  justify-content: flex-end;
+}
 .project-img-bg {
   width: 100%;
   height: 100%;
@@ -1133,6 +1335,12 @@ a, button, input, textarea, select {
   border: 1px solid rgba(255,255,255,0.12);
   color: var(--text-muted);
 }
+.tag-project-accent {
+  color: var(--project-accent, var(--c2));
+  background: var(--project-accent-soft, rgba(255,255,255,0.07));
+  border-color: var(--project-accent-border, rgba(255,255,255,0.12));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--project-accent, var(--c2)) 10%, transparent);
+}
 .project-body h3 {
   font-size: 1.15rem;
   font-weight: 700;
@@ -1168,10 +1376,50 @@ a, button, input, textarea, select {
   gap: 6px;
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--c2);
-  transition: gap var(--transition);
+  color: var(--project-accent, var(--c2));
+  transition: gap var(--transition), color var(--transition), text-shadow var(--transition);
+  text-shadow: 0 0 16px color-mix(in srgb, var(--project-accent, var(--c2)) 28%, transparent);
 }
-.project-link:hover { gap: 10px; }
+.project-link:hover {
+  gap: 10px;
+  color: color-mix(in srgb, var(--project-accent, var(--c2)) 78%, white);
+}
+
+@keyframes projectGlowPulse {
+  0% {
+    border-color: color-mix(in srgb, var(--project-accent, var(--c2)) 18%, rgba(255,255,255,0.08));
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--project-accent, var(--c2)) 8%, transparent),
+      0 0 18px color-mix(in srgb, var(--project-accent, var(--c2)) 12%, transparent),
+      0 18px 42px rgba(0,0,0,0.22);
+  }
+  50% {
+    border-color: color-mix(in srgb, var(--project-accent, var(--c2)) 34%, rgba(255,255,255,0.08));
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--project-accent, var(--c2)) 16%, transparent),
+      0 0 40px color-mix(in srgb, var(--project-accent, var(--c2)) 28%, transparent),
+      0 22px 50px rgba(0,0,0,0.3);
+  }
+  100% {
+    border-color: color-mix(in srgb, var(--project-accent, var(--c2)) 18%, rgba(255,255,255,0.08));
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--project-accent, var(--c2)) 8%, transparent),
+      0 0 18px color-mix(in srgb, var(--project-accent, var(--c2)) 12%, transparent),
+      0 18px 42px rgba(0,0,0,0.22);
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-grid > .project-reveal:nth-child(odd) {
+    --project-enter-x: min(-38vw, -460px);
+    --project-enter-y: 0px;
+  }
+
+  .projects-grid > .project-reveal:nth-child(even) {
+    --project-enter-x: min(38vw, 460px);
+    --project-enter-y: 0px;
+  }
+}
 
 /* ═══════════════════════════════════════════════════════════
    ABOUT
@@ -1920,6 +2168,22 @@ a, button, input, textarea, select {
 .fade-up-d4 { transition-delay: 0.4s; }
 .fade-up-d5 { transition-delay: 0.5s; }
 
+@media (max-width: 1100px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-grid > .service-reveal:nth-child(odd) {
+    --service-enter-x: min(-42vw, -520px);
+    --service-enter-y: 0px;
+  }
+
+  .services-grid > .service-reveal:nth-child(even) {
+    --service-enter-x: min(42vw, 520px);
+    --service-enter-y: 0px;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════════════ */
@@ -1930,6 +2194,16 @@ a, button, input, textarea, select {
   .projects-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .stats-row { gap: 12px; }
+
+  .services-grid > .service-reveal:nth-child(odd) {
+    --service-enter-x: min(-42vw, -520px);
+    --service-enter-y: 0px;
+  }
+
+  .services-grid > .service-reveal:nth-child(even) {
+    --service-enter-x: min(42vw, 520px);
+    --service-enter-y: 0px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════

@@ -91,8 +91,8 @@ Schnell, auffällig und auf neue Kunden optimiert.
 
       <div class="services-grid">
 
-        <article class="service-card glass fade-up fade-up-d1"
-                 style="--accent-grad:linear-gradient(90deg,var(--c3),var(--c6));--icon-grad-a:rgba(168,85,247,0.2);--icon-grad-b:rgba(59,130,246,0.26);--icon-glow-a:rgba(168,85,247,0.42);--icon-glow-b:rgba(59,130,246,0.3)">
+        <article class="service-card service-reveal glass fade-up"
+                 style="--service-delay:0.08s;--accent-grad:linear-gradient(90deg,var(--c3),var(--c6));--icon-grad-a:rgba(168,85,247,0.2);--icon-grad-b:rgba(59,130,246,0.26);--icon-glow-a:rgba(168,85,247,0.42);--icon-glow-b:rgba(59,130,246,0.3)">
           <div class="service-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="currentColor" d="M12 3a9 9 0 0 0 0 18h1.12a1.88 1.88 0 0 0 1.88-1.88c0-.47-.18-.92-.5-1.26a1.77 1.77 0 0 1-.44-1.14c0-.97.79-1.75 1.75-1.75H17A4 4 0 0 0 21 11a8 8 0 0 0-9-8m-5.5 9A1.5 1.5 0 1 1 8 10.5A1.5 1.5 0 0 1 6.5 12m3-4A1.5 1.5 0 1 1 11 6.5A1.5 1.5 0 0 1 9.5 8m5 0A1.5 1.5 0 1 1 16 6.5A1.5 1.5 0 0 1 14.5 8m3 4a1.5 1.5 0 1 1 1.5-1.5a1.5 1.5 0 0 1-1.5 1.5"/>
@@ -102,8 +102,8 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <p>Modernes Webdesign mit einzigartigem Stil und flüssigen Animationen.</p>
         </article>
 
-        <article class="service-card glass fade-up fade-up-d2"
-                 style="--accent-grad:linear-gradient(90deg,var(--c2),var(--c5));--icon-grad-a:rgba(78,205,196,0.2);--icon-grad-b:rgba(16,185,129,0.24);--icon-glow-a:rgba(78,205,196,0.42);--icon-glow-b:rgba(16,185,129,0.28)">
+        <article class="service-card service-reveal glass fade-up"
+                 style="--service-delay:0.18s;--accent-grad:linear-gradient(90deg,var(--c2),var(--c5));--icon-grad-a:rgba(78,205,196,0.2);--icon-grad-b:rgba(16,185,129,0.24);--icon-glow-a:rgba(78,205,196,0.42);--icon-glow-b:rgba(16,185,129,0.28)">
           <div class="service-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="currentColor" d="M13 2L4 14h6l-1 8l9-12h-6z"/>
@@ -113,8 +113,8 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <p>Performanter Code mit PHP, HTML, CSS und JavaScript – schnell, sauber und vollständig responsive.</p>
         </article>
 
-        <article class="service-card glass fade-up fade-up-d3"
-                 style="--accent-grad:linear-gradient(90deg,var(--c4),var(--c1));--icon-grad-a:rgba(251,191,36,0.2);--icon-grad-b:rgba(255,107,107,0.24);--icon-glow-a:rgba(251,191,36,0.42);--icon-glow-b:rgba(255,107,107,0.28)">
+        <article class="service-card service-reveal glass fade-up"
+                 style="--service-delay:0.28s;--accent-grad:linear-gradient(90deg,var(--c4),var(--c1));--icon-grad-a:rgba(251,191,36,0.2);--icon-grad-b:rgba(255,107,107,0.24);--icon-glow-a:rgba(251,191,36,0.42);--icon-glow-b:rgba(255,107,107,0.28)">
           <div class="service-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
               <path d="M11.2498 5.75037C10.8356 5.75037 10.4998 6.08615 10.4998 6.50037C10.4998 6.91458 10.8356 7.25037 11.2498 7.25037C13.874 7.25037 16.0011 9.37718 16.0011 12.0004C16.0011 12.4146 16.3369 12.7504 16.7511 12.7504C17.1653 12.7504 17.5011 12.4146 17.5011 12.0004C17.5011 8.54842 14.7021 5.75037 11.2498 5.75037Z" fill="currentColor"/>
@@ -125,8 +125,8 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <p>Technisches SEO und Performance-Optimierung für bessere Rankings und schnelle Ladezeiten.</p>
         </article>
 
-        <article class="service-card glass fade-up fade-up-d4"
-                 style="--accent-grad:linear-gradient(90deg,var(--c7),var(--c3));--icon-grad-a:rgba(244,114,182,0.22);--icon-grad-b:rgba(168,85,247,0.24);--icon-glow-a:rgba(244,114,182,0.42);--icon-glow-b:rgba(168,85,247,0.28)">
+        <article class="service-card service-reveal glass fade-up"
+                 style="--service-delay:0.38s;--accent-grad:linear-gradient(90deg,var(--c7),var(--c3));--icon-grad-a:rgba(244,114,182,0.22);--icon-grad-b:rgba(168,85,247,0.24);--icon-glow-a:rgba(244,114,182,0.42);--icon-glow-b:rgba(168,85,247,0.28)">
           <div class="service-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="currentColor" d="M7 18a2 2 0 1 0 2 2a2 2 0 0 0-2-2m10 0a2 2 0 1 0 2 2a2 2 0 0 0-2-2M7.17 14h9.92a2 2 0 0 0 1.91-1.41L21 6H6.21l-.47-2H2v2h2.17z"/>
@@ -136,8 +136,8 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <p>Individuelle Online-Shops, die Produkte optimal präsentieren und Besucher in Kunden verwandeln.</p>
         </article>
 
-        <article class="service-card glass fade-up fade-up-d5"
-                 style="--accent-grad:linear-gradient(90deg,var(--c6),var(--c2));--icon-grad-a:rgba(59,130,246,0.22);--icon-grad-b:rgba(78,205,196,0.22);--icon-glow-a:rgba(59,130,246,0.42);--icon-glow-b:rgba(78,205,196,0.28)">
+        <article class="service-card service-reveal glass fade-up"
+                 style="--service-delay:0.48s;--accent-grad:linear-gradient(90deg,var(--c6),var(--c2));--icon-grad-a:rgba(59,130,246,0.22);--icon-grad-b:rgba(78,205,196,0.22);--icon-glow-a:rgba(59,130,246,0.42);--icon-glow-b:rgba(78,205,196,0.28)">
           <div class="service-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="currentColor" d="M7 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm5 18a1.25 1.25 0 1 1 1.25-1.25A1.25 1.25 0 0 1 12 20m5-4H7V5h10z"/>
@@ -147,12 +147,13 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <p>Pixel-perfektes Responsive-Design für Smartphone, Tablet und Desktop.</p>
         </article>
 
-        <article class="service-card glass fade-up fade-up-d1"
+        <article class="service-card service-reveal glass fade-up"
                  style="    --accent-grad: linear-gradient(90deg, #3f10b9, #cd6c4e);
     --icon-grad-a: rgb(16 22 185 / 22%);
     --icon-grad-b: rgb(205 114 78 / 22%);
     --icon-glow-a: rgb(16 38 185 / 42%);
-    --icon-glow-b: rgb(205 121 78 / 28%);">
+    --icon-glow-b: rgb(205 121 78 / 28%);
+    --service-delay: 0.58s;">
           <div class="service-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M13.4423 4.0528C13.4423 3.02209 14.2778 2.18652 15.3085 2.18652C16.3393 2.18652 17.1748 3.02208 17.1748 4.0528C17.1748 5.08352 16.3393 5.91908 15.3085 5.91908C14.2778 5.91908 13.4423 5.08352 13.4423 4.0528Z" fill="currentColor"/>
@@ -244,7 +245,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
       </h2>
 
       <div class="process-steps">
-        <div class="step-card glass fade-up fade-up-d1" data-step="01">
+        <div class="step-card process-reveal glass fade-up" data-step="01">
           <div class="step-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"/>
@@ -253,7 +254,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <h3>Erstgespräch</h3>
           <p>Wir besprechen deine Ziele, Zielgruppe und Vorstellungen. Kostenlos und unverbindlich.</p>
         </div>
-        <div class="step-card glass fade-up fade-up-d2" data-step="02">
+        <div class="step-card process-reveal glass fade-up" data-step="02">
           <div class="step-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
               <path fill="currentColor" d="M21.211 6C8.579 6 1 16.133 1 21.2s2.526 8.867 7.579 8.867s7.58 1.266 7.58 5.066c0 5.066 3.789 8.866 8.842 8.866c16.422 0 24-8.866 24-17.732C49 11.067 36.366 6 21.211 6m-3.158 5.067a3.16 3.16 0 0 1 3.158 3.166c0 1.75-1.414 3.167-3.158 3.167s-3.158-1.418-3.158-3.167a3.16 3.16 0 0 1 3.158-3.166m10.104 0a3.16 3.16 0 0 1 3.158 3.166a3.16 3.16 0 0 1-3.158 3.167A3.16 3.16 0 0 1 25 14.233a3.16 3.16 0 0 1 3.157-3.166m10.106 5.066a3.16 3.16 0 0 1 3.159 3.167a3.16 3.16 0 0 1-3.159 3.166a3.16 3.16 0 0 1-3.157-3.166a3.16 3.16 0 0 1 3.157-3.167M9.211 18.667a3.16 3.16 0 0 1 3.157 3.165c0 1.75-1.414 3.167-3.157 3.167s-3.158-1.418-3.158-3.167a3.16 3.16 0 0 1 3.158-3.165M25 31.333c2.093 0 3.789 1.7 3.789 3.801c0 2.098-1.696 3.799-3.789 3.799s-3.789-1.701-3.789-3.799A3.794 3.794 0 0 1 25 31.333"/>
@@ -262,7 +263,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <h3>Konzept &amp; Design</h3>
           <p>Ich erstelle ein Designkonzept, das zu deiner Marke passt – mit Liquid-Glass-Elementen und individuellem Flair.</p>
         </div>
-        <div class="step-card glass fade-up fade-up-d3" data-step="03">
+        <div class="step-card process-reveal glass fade-up" data-step="03">
           <div class="step-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="currentColor" d="m12.89 3l1.96.4L11.11 21l-1.96-.4zm6.7 9L16 8.41V5.58L22.42 12L16 18.41v-2.83zM1.58 12L8 5.58v2.83L4.41 12L8 15.58v2.83z"/>
@@ -271,7 +272,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
           <h3>Entwicklung</h3>
           <p>Sauberer, strukturierter Code. Ich halte dich mit regelmäßigen Updates auf dem Laufenden.</p>
         </div>
-        <div class="step-card glass fade-up fade-up-d4" data-step="04">
+        <div class="step-card process-reveal glass fade-up" data-step="04">
           <div class="step-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="currentColor" d="M5 16c-2 1-2 5-2 5s3 0 5-2zM21 2h-3.69c-2.4 0-4.66.94-6.36 2.64L8.69 6.9a8.4 8.4 0 0 0-6.24 1.27c-.25.17-.41.44-.44.73s.08.59.29.81l12 12c.2.2.45.29.71.29s.51-.1.71-.29c1.9-1.9 1.6-5.08 1.38-6.38l2.28-2.28c1.7-1.7 2.64-3.96 2.64-6.36V3c0-.55-.45-1-1-1Zm-3.59 7.41c-.78.78-2.05.78-2.83 0s-.78-2.05 0-2.83s2.05-.78 2.83 0s.78 2.05 0 2.83"/>
@@ -293,13 +294,13 @@ Schnell, auffällig und auf neue Kunden optimiert.
       </h2>
 
       <div class="trust-grid">
-        <article class="testimonial-card testimonial glass fade-up fade-up-d2">
+        <article class="testimonial-card testimonial testimonial-reveal glass fade-up">
           <blockquote class="testimonial-quote">
             "Jason hat unsere Webseite komplett neu aufgebaut. Seitdem bekommen wir deutlich mehr Anfragen."
           </blockquote>
           <p class="testimonial-source testimonial-author">— Visitfy, 360° Rundgänge</p>
         </article>
-        <article class="testimonial-card testimonial glass fade-up fade-up-d3">
+        <article class="testimonial-card testimonial testimonial-reveal glass fade-up">
           <blockquote class="testimonial-quote">
             "Vom ersten Entwurf bis zum Livegang lief alles strukturiert, schnell und absolut zuverlässig."
           </blockquote>
@@ -318,8 +319,16 @@ Schnell, auffällig und auf neue Kunden optimiert.
       </h2>
 
       <div class="projects-grid">
-        <article class="project-card glass fade-up fade-up-d1">
+        <article class="project-card project-reveal project-card-clickable glass fade-up"
+                 data-href="https://jasonholweg.de/demo/garten2000"
+                 data-target="_blank"
+                 tabindex="0"
+                 role="link"
+                 style="--project-accent:#7CFF6B;--project-accent-soft:rgba(124,255,107,0.16);--project-accent-border:rgba(124,255,107,0.34);">
           <div class="project-img">
+            <div class="project-tags project-tags-overlay">
+              <span class="tag tag-project-accent">Einzelhandel</span>
+            </div>
             <div class="project-img-bg" style="--proj-bg:linear-gradient(135deg,rgba(16,185,129,0.3),rgba(78,205,196,0.3))">
               <img
                 src="<?= $root ?>assets/img/projekte/garten2000-handewitt.de.png"
@@ -334,13 +343,21 @@ Schnell, auffällig und auf neue Kunden optimiert.
             <h3>Garten2000 Handewitt</h3>
             <p>Moderner Webauftritt für ein Gartencenter mit klarer Nutzerführung und starkem lokalem Auftritt.</p>
             <div class="project-links">
-              <a href="pages/projects.php" class="project-link">Projekt ansehen <span aria-hidden="true">→</span></a>
+              <a href="https://jasonholweg.de/demo/garten2000" class="project-link" target="_blank" rel="noopener noreferrer">Projekt ansehen <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </article>
 
-        <article class="project-card glass fade-up fade-up-d2">
+        <article class="project-card project-reveal project-card-clickable glass fade-up"
+                 data-href="https://jasonholweg.de/demo/visitfy"
+                 data-target="_blank"
+                 tabindex="0"
+                 role="link"
+                 style="--project-accent:#A855F7;--project-accent-soft:rgba(168,85,247,0.16);--project-accent-border:rgba(168,85,247,0.34);">
           <div class="project-img">
+            <div class="project-tags project-tags-overlay">
+              <span class="tag tag-project-accent">Digital</span>
+            </div>
             <div class="project-img-bg" style="--proj-bg:linear-gradient(135deg,rgba(251,191,36,0.3),rgba(249,115,22,0.3))">
               <img
                 src="<?= $root ?>assets/img/projekte/visitfy.de.png"
@@ -355,13 +372,21 @@ Schnell, auffällig und auf neue Kunden optimiert.
             <h3>Visitfy</h3>
             <p>Präsentationsstarke Website für 360-Grad-Rundgänge mit Fokus auf Vertrauen, Klarheit und Anfragen.</p>
             <div class="project-links">
-              <a href="pages/projects.php" class="project-link">Projekt ansehen <span aria-hidden="true">→</span></a>
+              <a href="https://jasonholweg.de/demo/visitfy" class="project-link" target="_blank" rel="noopener noreferrer">Projekt ansehen <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </article>
 
-        <article class="project-card glass fade-up fade-up-d3">
+        <article class="project-card project-reveal project-card-clickable glass fade-up"
+                 data-href="https://flora-fl.de"
+                 data-target="_blank"
+                 tabindex="0"
+                 role="link"
+                 style="--project-accent:#FF4FB6;--project-accent-soft:rgba(255,79,182,0.16);--project-accent-border:rgba(255,79,182,0.34);">
           <div class="project-img">
+            <div class="project-tags project-tags-overlay">
+              <span class="tag tag-project-accent">Gastronomie</span>
+            </div>
             <div class="project-img-bg" style="--proj-bg:linear-gradient(135deg,rgba(59,130,246,0.3),rgba(14,165,233,0.3))">
               <img
                 src="<?= $root ?>assets/img/projekte/flora-fl.de.png"
@@ -376,7 +401,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
             <h3>Flora Kaffee &amp; Eisbar</h3>
             <p>Website mit Event-Bereich, Speisekarte und CMS-Logik für schnelle inhaltliche Pflege im Alltag.</p>
             <div class="project-links">
-              <a href="pages/projects.php" class="project-link">Projekt ansehen <span aria-hidden="true">→</span></a>
+              <a href="https://flora-fl.de" class="project-link" target="_blank" rel="noopener noreferrer">Projekt ansehen <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </article>
