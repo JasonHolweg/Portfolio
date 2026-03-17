@@ -122,24 +122,29 @@ $projects = [
 ];
 ?>
 
-<header class="page-hero" role="banner">
-  <div class="orb" style="width:500px;height:500px;top:-80px;left:-100px;background:radial-gradient(circle,rgba(168,85,247,0.2),transparent 70%)"></div>
-  <div class="orb" style="width:350px;height:350px;bottom:0;right:-80px;background:radial-gradient(circle,rgba(59,130,246,0.18),transparent 70%)"></div>
-  <div class="container" style="position:relative;z-index:1">
-    <p class="section-label">Ausgewählte Arbeiten</p>
-    <h1 class="fade-up"><span class="grad-text">Meine Projekte</span></h1>
-    <p class="fade-up fade-up-d1">Einblicke in Webseiten und Webanwendungen, die ich mit Liebe zum Detail gebaut habe.</p>
-  </div>
-</header>
-
 <main>
-  <section class="section premium-effects-section projects-showcase-section" aria-labelledby="projects-heading">
+  <div class="projects-page-flow premium-effects-section">
     <div class="premium-ribbon-wrapper" aria-hidden="true">
       <canvas id="premium-ribbon-canvas" class="premium-ribbon-canvas"></canvas>
     </div>
     <div class="premium-vignette" aria-hidden="true"></div>
-    <div class="orb" style="width:520px;height:520px;top:-120px;left:-140px;background:radial-gradient(circle,rgba(168,85,247,0.12),transparent 72%);z-index:0;"></div>
-    <div class="orb" style="width:440px;height:440px;bottom:-80px;right:-100px;background:radial-gradient(circle,rgba(78,205,196,0.1),transparent 72%);z-index:0;"></div>
+    <div class="orb" style="position:absolute;width:520px;height:520px;top:-120px;left:-140px;background:radial-gradient(circle,rgba(168,85,247,0.12),transparent 72%);z-index:0;"></div>
+    <div class="orb" style="position:absolute;width:440px;height:440px;bottom:18%;right:-100px;background:radial-gradient(circle,rgba(78,205,196,0.1),transparent 72%);z-index:0;"></div>
+
+    <header class="page-hero premium-effects-section projects-page-hero" role="banner">
+      <div class="premium-antigravity-wrapper" aria-hidden="true" style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;pointer-events:none;">
+        <canvas id="premium-antigravity-canvas" class="premium-antigravity-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+      </div>
+      <div class="orb" style="position:absolute;width:500px;height:500px;top:-80px;left:-100px;background:radial-gradient(circle,rgba(168,85,247,0.2),transparent 70%);z-index:1;"></div>
+      <div class="orb" style="position:absolute;width:350px;height:350px;bottom:0;right:-80px;background:radial-gradient(circle,rgba(59,130,246,0.18),transparent 70%);z-index:1;"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <p class="section-label">Ausgewählte Arbeiten</p>
+        <h1 class="fade-up"><span class="grad-text">Meine Projekte</span></h1>
+        <p class="fade-up fade-up-d1">Einblicke in Webseiten und Webanwendungen, die ich mit Liebe zum Detail gebaut habe.</p>
+      </div>
+    </header>
+
+    <section class="section projects-showcase-section projects-section" aria-labelledby="projects-heading">
     <div class="container">
       <h2 class="sr-only" id="projects-heading">Alle Projekte</h2>
 
@@ -198,7 +203,8 @@ $projects = [
         <?php endforeach; ?>
       </div>
     </div>
-  </section>
+    </section>
+  </div>
 
   <!-- CTA -->
   <section class="cta-section" aria-labelledby="cta-heading">
