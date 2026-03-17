@@ -201,12 +201,43 @@ $projects = [
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
-    <div class="orb" style="width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(168,85,247,0.18),transparent 70%)"></div>
-    <div class="container" style="position:relative;z-index:1">
-      <h2 class="fade-up">Dein Projekt ist das<br><span class="grad-text">nächste auf der Liste</span></h2>
-      <p class="fade-up fade-up-d1">Lass uns gemeinsam etwas Einzigartiges schaffen.</p>
-      <a href="Kontakt.php" class="btn btn-primary fade-up fade-up-d2">Jetzt anfragen →</a>
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-section__ambient cta-section__ambient--violet" aria-hidden="true"></div>
+    <div class="cta-section__ambient cta-section__ambient--cyan" aria-hidden="true"></div>
+    <div class="cta-section__grid" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="cta-panel glass">
+        <div class="cta-panel__noise" aria-hidden="true"></div>
+        <div class="cta-panel__border-glow" aria-hidden="true"></div>
+
+        <div class="cta-copy">
+          <p class="cta-kicker fade-up">Bereit fuer den naechsten Schritt</p>
+          <h2 class="fade-up" id="cta-heading">
+            Lass uns deine neue<br>
+            <span class="grad-text">Webseite planen.</span>
+          </h2>
+          <p class="cta-lead fade-up fade-up-d1">
+            Gemeinsam etwas Grossartiges bauen. Schreib mir fuer ein unverbindliches Erstgespraech und wir entwickeln einen Auftritt, der hochwertig wirkt, Vertrauen aufbaut und Anfragen erzeugt.
+          </p>
+          <div class="cta-actions fade-up fade-up-d2">
+            <a href="Kontakt.php" class="btn btn-primary cta-primary cta-primary--hero">Kostenloses Erstgespraech buchen <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="cta-signals fade-up fade-up-d3" aria-label="Vorteile">
+            <span class="cta-signal">Antwort innerhalb von 48h</span>
+            <span class="cta-signal">Strategisch, modern, performant</span>
+            <span class="cta-signal">Klarer Prozess ohne Chaos</span>
+          </div>
+        </div>
+
+        <aside class="cta-side fade-up fade-up-d2" aria-label="Warum jetzt anfragen">
+          <div class="cta-side__card">
+            <span class="cta-side__label">Finaler Conversion-Moment</span>
+            <p class="cta-side__title">Von der Idee zum starken digitalen Auftritt.</p>
+            <p class="cta-side__text">Design, Entwicklung und Conversion-Fokus in einem klar gefuehrten Prozess, damit aus einer Anfrage ein sauber umgesetztes Ergebnis wird.</p>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 </main>
