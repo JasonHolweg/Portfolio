@@ -47,6 +47,8 @@ $mainJsVersion = file_exists($mainJsPath) ? filemtime($mainJsPath) : time();
         <a href="<?= $root ?>pages/aboutme.php">Über mich</a>
         <a href="<?= $root ?>pages/projects.php">Projekte</a>
         <a href="<?= $root ?>pages/Kontakt.php">Kontakt</a>
+        <a href="<?= $root ?>pages/kalkulator.php">Kalkulator</a>
+        <a href="<?= $root ?>pages/outreach_dashboard.php">Outreach Dashboard</a>
       </div>
 
       <div class="footer-links-group">

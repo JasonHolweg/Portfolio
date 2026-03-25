@@ -53,7 +53,7 @@ $projects = [
     'actions' => [
       [
         'label' => 'Projekt ansehen',
-        'url'   => 'https://jasonholweg.de/demo/visitfy',
+        'url'   => 'https://visitfy.de',
       ],
     ],
     'image'   => 'visitfy.de.png',

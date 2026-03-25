@@ -2,6 +2,8 @@
 $root      = '../';
 $pageTitle = 'Kontakt – Jason Holweg';
 $pageDesc  = 'Nimm Kontakt mit Jason Holweg auf – ich freue mich auf dein Projekt und antworte innerhalb von 48 Stunden.';
+$bodyClass = 'page-contact';
+$navClass  = 'scrolled';
 $mailConfig = [];
 $mailConfigPath = __DIR__ . '/../config.mail.php';
 if (is_file($mailConfigPath)) {

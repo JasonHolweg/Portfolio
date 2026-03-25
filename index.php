@@ -369,7 +369,7 @@ Schnell, auffällig und auf neue Kunden optimiert.
         </article>
 
         <article class="project-card project-reveal project-card-clickable glass fade-up"
-                 data-href="https://jasonholweg.de/demo/visitfy"
+                 data-href="https://visitfy.de"
                  data-target="_blank"
                  tabindex="0"
                  role="link"

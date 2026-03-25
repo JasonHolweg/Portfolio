@@ -19,8 +19,9 @@
     /* ── Scrolled nav ────────────────────────────────────── */
     var nav = document.querySelector('.site-nav');
     if (nav) {
+      var alwaysScrolled = nav.classList.contains('scrolled');
       window.addEventListener('scroll', function () {
-        nav.classList.toggle('scrolled', window.scrollY > 40);
+        nav.classList.toggle('scrolled', alwaysScrolled || window.scrollY > 40);
       }, { passive: true });
     }
 
