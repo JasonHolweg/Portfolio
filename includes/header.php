@@ -7,6 +7,8 @@
 if (!isset($root)) $root = '';
 if (!isset($pageTitle)) $pageTitle = 'Jason Holweg – Webseiten für Firmen mit Stil';
 if (!isset($pageDesc)) $pageDesc  = 'Professionelle Webentwicklung mit modernem Design. Ich erstelle individuelle Webseiten für Firmen und Selbstständige.';
+if (!isset($bodyClass)) $bodyClass = '';
+if (!isset($navClass)) $navClass = '';
 $stylePath = __DIR__ . '/../assets/css/style.css';
 $styleVersion = file_exists($stylePath) ? filemtime($stylePath) : time();
 ?>
@@ -31,11 +33,14 @@ $styleVersion = file_exists($stylePath) ? filemtime($stylePath) : time();
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body>
+<body<?= $bodyClass !== '' ? ' class="' . htmlspecialchars($bodyClass, ENT_QUOTES, 'UTF-8') . '"' : '' ?>>
 
 <!-- ── Navigation ────────────────────────────────────────── -->
-<nav class="site-nav" role="navigation" aria-label="Hauptnavigation">
-  <a href="<?= $root ?>index.php" class="nav-logo" aria-label="Jason Holweg – Startseite">JH</a>
+<nav class="site-nav<?= $navClass !== '' ? ' ' . htmlspecialchars($navClass, ENT_QUOTES, 'UTF-8') : '' ?>" role="navigation" aria-label="Hauptnavigation">
+  <a href="<?= $root ?>index.php" class="nav-brand" aria-label="Jason Holweg – Startseite">
+    <span class="nav-brand__mark" aria-hidden="true">JH</span>
+    <span class="nav-brand__text">Jason Holweg</span>
+  </a>
 
   <ul class="nav-links" role="list">
     <li><a href="<?= $root ?>index.php">Start</a></li>
@@ -43,6 +48,7 @@ $styleVersion = file_exists($stylePath) ? filemtime($stylePath) : time();
     <li><a href="<?= $root ?>pages/aboutme.php">Über mich</a></li>
     <li><a href="<?= $root ?>pages/projects.php">Projekte</a></li>
     <li><a href="<?= $root ?>pages/Kontakt.php">Kontakt</a></li>
+    <li><a href="<?= $root ?>pages/kalkulator.php">Kalkulator</a></li>
   </ul>
 
   <a href="<?= $root ?>pages/Kontakt.php" class="nav-cta">Projekt starten</a>
@@ -61,4 +67,5 @@ $styleVersion = file_exists($stylePath) ? filemtime($stylePath) : time();
   <a href="<?= $root ?>pages/aboutme.php">Über mich</a>
   <a href="<?= $root ?>pages/projects.php">Projekte</a>
   <a href="<?= $root ?>pages/Kontakt.php">Kontakt</a>
+  <a href="<?= $root ?>pages/kalkulator.php">Kalkulator</a>
 </nav>

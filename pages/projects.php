@@ -53,7 +53,7 @@ $projects = [
     'actions' => [
       [
         'label' => 'Projekt ansehen',
-        'url'   => 'https://jasonholweg.de/demo/visitfy',
+        'url'   => 'https://visitfy.de',
       ],
     ],
     'image'   => 'visitfy.de.png',
@@ -122,24 +122,36 @@ $projects = [
 ];
 ?>
 
-<header class="page-hero" role="banner">
-  <div class="orb" style="width:500px;height:500px;top:-80px;left:-100px;background:radial-gradient(circle,rgba(168,85,247,0.2),transparent 70%)"></div>
-  <div class="orb" style="width:350px;height:350px;bottom:0;right:-80px;background:radial-gradient(circle,rgba(59,130,246,0.18),transparent 70%)"></div>
-  <div class="container" style="position:relative;z-index:1">
-    <p class="section-label">Ausgewählte Arbeiten</p>
-    <h1 class="fade-up"><span class="grad-text">Meine Projekte</span></h1>
-    <p class="fade-up fade-up-d1">Einblicke in Webseiten und Webanwendungen, die ich mit Liebe zum Detail gebaut habe.</p>
-  </div>
-</header>
-
 <main>
-  <section class="section" aria-labelledby="projects-heading">
+  <div class="projects-page-flow premium-effects-section">
+    <div class="premium-ribbon-wrapper" aria-hidden="true">
+      <canvas id="premium-ribbon-canvas" class="premium-ribbon-canvas"></canvas>
+    </div>
+    <div class="premium-vignette" aria-hidden="true"></div>
+    <div class="orb" style="position:absolute;width:520px;height:520px;top:-120px;left:-140px;background:radial-gradient(circle,rgba(168,85,247,0.12),transparent 72%);z-index:0;"></div>
+    <div class="orb" style="position:absolute;width:440px;height:440px;bottom:18%;right:-100px;background:radial-gradient(circle,rgba(78,205,196,0.1),transparent 72%);z-index:0;"></div>
+
+    <header class="page-hero premium-effects-section projects-page-hero" role="banner">
+      <div class="premium-antigravity-wrapper" aria-hidden="true" style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;pointer-events:none;">
+        <canvas id="premium-antigravity-canvas" class="premium-antigravity-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+      </div>
+      <div class="orb" style="position:absolute;width:500px;height:500px;top:-80px;left:-100px;background:radial-gradient(circle,rgba(168,85,247,0.2),transparent 70%);z-index:1;"></div>
+      <div class="orb" style="position:absolute;width:350px;height:350px;bottom:0;right:-80px;background:radial-gradient(circle,rgba(59,130,246,0.18),transparent 70%);z-index:1;"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <p class="section-label">Ausgewählte Arbeiten</p>
+        <h1 class="fade-up"><span class="grad-text">Meine Projekte</span></h1>
+        <p class="fade-up fade-up-d1">Einblicke in Webseiten und Webanwendungen, die ich mit Liebe zum Detail gebaut habe.</p>
+      </div>
+    </header>
+
+    <section class="section projects-showcase-section projects-section" aria-labelledby="projects-heading">
     <div class="container">
       <h2 class="sr-only" id="projects-heading">Alle Projekte</h2>
 
-      <div class="projects-grid">
+      <div class="projects-grid projects-page-grid">
         <?php foreach ($projects as $i => $p): ?>
-        <article class="project-card glass fade-up<?= $i < 3 ? ' fade-up-d' . ($i + 1) : '' ?>">
+        <article class="project-card project-page-reveal glass fade-up"
+                 style="--project-accent:<?= htmlspecialchars($p['color']) ?>;--project-delay:<?= htmlspecialchars(number_format(($i % 4) * 0.12 + floor($i / 4) * 0.04, 2, '.', '')) ?>s;">
           <div class="project-img">
             <div class="project-img-bg" style="--proj-bg:<?= htmlspecialchars($p['bg']) ?>">
               <?php
@@ -191,17 +203,50 @@ $projects = [
         <?php endforeach; ?>
       </div>
     </div>
-  </section>
+    </section>
+  </div>
 
   <!-- CTA -->
-  <section class="cta-section">
-    <div class="orb" style="width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(168,85,247,0.18),transparent 70%)"></div>
-    <div class="container" style="position:relative;z-index:1">
-      <h2 class="fade-up">Dein Projekt ist das<br><span class="grad-text">nächste auf der Liste</span></h2>
-      <p class="fade-up fade-up-d1">Lass uns gemeinsam etwas Einzigartiges schaffen.</p>
-      <a href="Kontakt.php" class="btn btn-primary fade-up fade-up-d2">Jetzt anfragen →</a>
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-section__ambient cta-section__ambient--violet" aria-hidden="true"></div>
+    <div class="cta-section__ambient cta-section__ambient--cyan" aria-hidden="true"></div>
+    <div class="cta-section__grid" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="cta-panel glass">
+        <div class="cta-panel__noise" aria-hidden="true"></div>
+        <div class="cta-panel__border-glow" aria-hidden="true"></div>
+
+        <div class="cta-copy">
+          <p class="cta-kicker fade-up">Bereit fuer den naechsten Schritt</p>
+          <h2 class="fade-up" id="cta-heading">
+            Lass uns deine neue<br>
+            <span class="grad-text">Webseite planen.</span>
+          </h2>
+          <p class="cta-lead fade-up fade-up-d1">
+            Gemeinsam etwas Grossartiges bauen. Schreib mir fuer ein unverbindliches Erstgespraech und wir entwickeln einen Auftritt, der hochwertig wirkt, Vertrauen aufbaut und Anfragen erzeugt.
+          </p>
+          <div class="cta-actions fade-up fade-up-d2">
+            <a href="Kontakt.php" class="btn btn-primary cta-primary cta-primary--hero">Kostenloses Erstgespraech buchen <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="cta-signals fade-up fade-up-d3" aria-label="Vorteile">
+            <span class="cta-signal">Antwort innerhalb von 48h</span>
+            <span class="cta-signal">Strategisch, modern, performant</span>
+            <span class="cta-signal">Klarer Prozess ohne Chaos</span>
+          </div>
+        </div>
+
+        <aside class="cta-side fade-up fade-up-d2" aria-label="Warum jetzt anfragen">
+          <div class="cta-side__card">
+            <span class="cta-side__label">Finaler Conversion-Moment</span>
+            <p class="cta-side__title">Von der Idee zum starken digitalen Auftritt.</p>
+            <p class="cta-side__text">Design, Entwicklung und Conversion-Fokus in einem klar gefuehrten Prozess, damit aus einer Anfrage ein sauber umgesetztes Ergebnis wird.</p>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 </main>
 
+<script src="<?= $root ?>assets/js/premium-effects.js"></script>
 <?php include '../includes/footer.php'; ?>
